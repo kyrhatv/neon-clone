@@ -3,15 +3,15 @@ import { Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import Icon from '../../Icon/Icon';
+import Icon from 'hs-components/Icon/Icon';
 import logo from '../../../assets/TimeSphere_icon_30.svg';
-import { NavStruct } from '../../../app-main/utils/RootStructInterface';
-import { RootState } from '../../../app-main/app/store';
+import { NavStruct } from 'app-main/utils/RootStructInterface';
+import { RootState } from 'app-main/app/store';
 import { useLocation } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectById, updateMenu } from '../../sf-sidebar/menusSlice';
-import { MAIN_MENU_ID } from '../../../hs-utils/constants/constants';
+import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
+import { MAIN_MENU_ID } from 'hs-utils/constants/constants';
 import { useCss } from 'react-use';
 
 import './style.css';
