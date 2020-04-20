@@ -5,7 +5,7 @@ import { Button, Row, Col, Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import Icon from '../Icon/Icon';
-import InlineSpace from '../hs-component-space';
+import InlineSpace from 'hs-components/hs-component-space';
 import './sidebar-menu.css';
 
 export interface SidebarProps {

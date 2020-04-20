@@ -1,8 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { PageHeader, PageContent } from '../../../hs-components/Layout';
-
+import { PageHeader, PageContent } from 'hs-components/Layout';
 
 import { Counter } from './test/Counter';
 import { Demo } from './demo/Demo';

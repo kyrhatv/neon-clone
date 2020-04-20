@@ -1,12 +1,12 @@
 import React from 'react';
 import { FunctionComponent } from 'react';
-import SideBar from '../sf-sidebar';
+import SideBar from 'hs-components/sf-sidebar';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectById, updateMenu } from '../sf-sidebar/menusSlice';
+import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
 import { RootState } from '../../app-main/app/store';
 
-import { OPTIONS_MENU_ID } from '../../hs-utils/constants/constants';
+import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
 export const ConfigSidebar: FunctionComponent = () => {
     const menuState = useSelector((state: RootState) => selectById(state, OPTIONS_MENU_ID));

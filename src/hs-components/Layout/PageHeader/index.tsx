@@ -6,9 +6,9 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { RootStruct } from '../../../app-main/app/RootStruct';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectById, updateMenu } from '../../sf-sidebar/menusSlice';
+import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
 import { RootState } from '../../../app-main/app/store';
-import { OPTIONS_MENU_ID } from '../../../hs-utils/constants/constants';
+import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
 import './style.css';
 import Icon from '../../Icon/Icon';

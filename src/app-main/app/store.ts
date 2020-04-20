@@ -1,7 +1,7 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import counterReducer from '../features/planning/test/counterSlice';
+import counterReducer from 'app-main/features/planning/test/counterSlice';
 
-import menusReducer from '../../hs-components/sf-sidebar/menusSlice';
+import menusReducer from 'hs-components/sf-sidebar/menusSlice';
 
 export const store = configureStore({
     reducer: {

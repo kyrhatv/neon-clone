@@ -5,9 +5,9 @@ import { Row, Col, Button, ButtonGroup, Form } from 'react-bootstrap';
 
 import { useTranslation } from 'react-i18next';
 
-import InlineSpace from '../../../hs-components/hs-component-space';
+import InlineSpace from 'hs-components/hs-component-space';
 import './style.css';
-import Icon from '../../../hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon/Icon';
 
 const Ribbon: FunctionComponent = () => {
     const [t] = useTranslation();
