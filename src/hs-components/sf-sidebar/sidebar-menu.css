@@ -1,0 +1,65 @@
+@import '../../../node_modules/@syncfusion/ej2-base/styles/bootstrap.css';
+@import '../../../node_modules/@syncfusion/ej2-react-navigations/styles/bootstrap.css';
+
+#toggle,
+#toggle:hover,
+#toggle:focus {
+    /* csslint allow: adjoining-classes*/
+    background: #00695c;
+    box-shadow: none;
+    border-radius: 0;
+    height: 39px;
+}
+
+.burg-icon:before {
+    content: '\e10d';
+    font-size: 16px;
+}
+
+.content {
+    height: 100%;
+}
+
+.e-normal,
+.e-normal:hover,
+.e-noraml:active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.listdiv {
+    width: 100%;
+}
+
+.sidebar {
+    margin-left: 70px;
+    background-color: #33383e;
+    color: #ffffff;
+    overflow-x: hidden;
+    margin: 3;
+}
+
+.sidebar-push {
+    margin-left: 70px;
+    background-color: #33383e;
+    color: #ffffff;
+}
+
+.e-sidebar.e-right {
+    border: 0px transparent;
+}
+.e-sidebar.e-left {
+    border: 0px transparent;
+}
+
+.close-btn:hover,
+.close-btn:active,
+.close-btn:focus {
+    background: #fafafa;
+}
+
+.footer {
+    bottom: 5px;
+    position: absolute;
+    width: inherit;
+}

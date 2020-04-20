@@ -1,0 +1,17 @@
+.hamburger-button {
+    text-align: right;
+}
+
+.hamburger-button .button:focus {
+    margin: auto;
+}
+
+.header-container {
+    background-color: #282c34;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    min-height: 64px;
+    height: calc(64px- 100%);
+    padding: 5px;
+}
