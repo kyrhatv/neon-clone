@@ -5,7 +5,7 @@ import { RootStruct } from './RootStruct';
 import Timesheets from '../features/timesheets';
 import Planning from '../features/planning';
 
-import { PageHeader, PageContent } from 'hs-components/Layout';
+import { PageHeader } from 'hs-components/Layout';
 import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
 import { ConfigSidebar } from 'hs-components/ConfigSidebar/ConfigSidebar';
 

@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import '@syncfusion/ej2-base/styles/bootstrap4.css';
-import '@syncfusion/ej2-react-layouts/styles/bootstrap4.css';
+import '@syncfusion/ej2-react-layouts/styles/bootstrap.css';
+import 'styles/syncFusion-bootstrap4/bootstrap4.css';
+
 import Root from './app-main/app/Root';
 import './translations/i18n';
 import * as serviceWorker from './serviceWorker';

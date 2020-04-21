@@ -1,0 +1,158 @@
+
+  .bootstrap4 .e-calendar .e-content td.e-today span.e-day,
+  .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-today span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today span.e-day {
+    background: none;
+    border: 1px solid #0275d8;
+    border-radius: 4px;
+    color: #333;
+  }
+  
+  .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today span.e-day {
+    background: #e6e6e6;
+    border: 1px solid #0275d8;
+    color: #333;
+  }
+  
+  .bootstrap4 .e-calendar .e-content td.e-today:hover span.e-day,
+  .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day,
+  .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-today:hover span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day {
+    background-color: #e6e6e6;
+    border: 1px solid #0275d8;
+    color: #333;
+  }
+  
+  .bootstrap4 .e-calendar .e-content td.e-today.e-selected span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-today.e-selected span.e-day {
+    background-color: #0275d8;
+    border: 1px solid #0275d8;
+    box-shadow: none;
+    color: #fff;
+  }
+  
+  .bootstrap4 .e-calendar .e-content td.e-selected span.e-day,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content td.e-selected span.e-day {
+    background-color: #0275d8;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  .bootstrap4 .e-calendar .e-content .e-footer,
+  .e-bigger.e-small .bootstrap4 .e-calendar .e-content .e-footer {
+    color: #0275d8;
+  }
+ 
+  
+  .e-timepicker.e-popup .e-list-parent.e-ul .e-list-item.e-active {
+    background-color: #0275d8;
+    color: #fff;
+  }
+  
+  .e-bigger .e-daterangepicker.e-popup .e-range-header .e-start-end .e-start-btn,
+  .e-bigger .e-daterangepicker.e-popup .e-range-header .e-start-end .e-end-btn,
+  .e-bigger.e-daterangepicker.e-popup .e-range-header .e-start-end .e-start-btn,
+  .e-bigger.e-daterangepicker.e-popup .e-range-header .e-start-end .e-end-btn,
+  .e-device.e-daterangepicker.e-popup .e-range-header .e-start-end .e-start-btn,
+  .e-device.e-daterangepicker.e-popup .e-range-header .e-start-end .e-end-btn {
+    border: 1px solid #0275d8;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: normal;
+    height: 36px;
+    line-height: 1em;
+    max-width: 116px;
+    overflow: hidden;
+    padding: 1px 6px;
+    text-overflow: ellipsis;
+    width: 50%;
+  }
+  
+  .e-bigger .e-daterangepicker.e-rtl.e-popup .e-range-header .e-start-end .e-end-btn,
+  .e-bigger.e-daterangepicker.e-rtl.e-popup .e-range-header .e-start-end .e-end-btn,
+  .e-device.e-daterangepicker.e-rtl.e-popup .e-range-header .e-start-end .e-end-btn {
+    border: 1px solid #0275d8;
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+  }
+  
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-content.e-month .e-today.e-range-hover span,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-content.e-month .e-today.e-range-hover span {
+    background-color: #f5f5f5;
+    border: 1px solid #0275d8;
+    color: #333;
+  }
+  
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-today:hover span.e-day,
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-focused-date.e-today span.e-day,
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-start-date.e-selected.e-today span.e-day,
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-end-date.e-selected.e-today span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-today:hover span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-focused-date.e-today span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-start-date.e-selected.e-today span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-end-date.e-selected.e-today span.e-day {
+    border: 1px solid #0275d8;
+  }
+  
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-selected.e-today:hover span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-range-hover.e-selected.e-today:hover span.e-day {
+    border: 1px solid #0275d8;
+  }
+  
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-end-date.e-selected.e-range-hover span.e-day,
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-start-date.e-selected.e-range-hover span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-end-date.e-selected.e-range-hover span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-start-date.e-selected.e-range-hover span.e-day {
+    background-color: #265f91;
+    color: #fff;
+  }
+  
+  .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-start-date.e-selected.e-range-hover.e-today span.e-day,
+  .e-bigger.e-small .e-daterangepicker.e-popup .bootstrap4 .e-calendar .e-start-date.e-selected.e-range-hover.e-today span.e-day {
+    background-color: #265f91;
+    color: #fff;
+  }
+  
+  .e-daterangepicker.e-popup .e-presets .e-list-item.e-active,
+  .e-bigger.e-small .e-daterangepicker.e-popup .e-presets .e-list-item.e-active {
+    background-color: #0275d8;
+    color: #fff;
+  }
+
+  .e-bigger .e-daterangepicker .e-start-btn.e-active,
+  .e-bigger .e-daterangepicker .e-start-btn.e-active:active,
+  .e-bigger .e-daterangepicker .e-end-btn.e-active,
+  .e-bigger .e-daterangepicker .e-end-btn.e-active:active:not([disabled]),
+  .e-bigger .e-daterangepicker .e-start-btn.e-active:hover,
+  .e-bigger .e-daterangepicker .e-end-btn.e-active:hover,
+  .e-bigger.e-daterangepicker .e-start-btn.e-active,
+  .e-bigger.e-daterangepicker .e-start-btn.e-active:active,
+  .e-bigger.e-daterangepicker .e-end-btn.e-active,
+  .e-bigger.e-daterangepicker .e-end-btn.e-active:active:not([disabled]),
+  .e-bigger.e-daterangepicker .e-start-btn.e-active:hover,
+  .e-bigger.e-daterangepicker .e-end-btn.e-active:hover,
+  .e-device.e-daterangepicker .e-start-btn.e-active,
+  .e-device.e-daterangepicker .e-start-btn.e-active:active,
+  .e-device.e-daterangepicker .e-end-btn.e-active,
+  .e-device.e-daterangepicker .e-end-btn.e-active:active:not([disabled]),
+  .e-device.e-daterangepicker .e-start-btn.e-active:hover,
+  .e-device.e-daterangepicker .e-end-btn.e-active:hover {
+    background: #0275d8;
+    color: #fff;
+  }
+  
+  .e-datetimepicker.e-popup .e-list-parent.e-ul .e-list-item.e-active {
+    background-color: #0275d8;
+    color: #fff;
+  }
+  
+  .e-datetimepicker.e-popup .e-list-parent.e-ul .e-list-item.e-active.e-hover {
+    background-color: #0275d8;
+    color: #fff;
+  }
+  
