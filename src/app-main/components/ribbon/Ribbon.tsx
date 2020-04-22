@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FunctionComponent } from 'react';
-import { Row, Col, Button, ButtonGroup, Badge } from 'react-bootstrap';
+import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import moment from 'moment';
 import InlineSpace from 'hs-components/hs-component-space';

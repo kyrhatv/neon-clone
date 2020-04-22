@@ -6,8 +6,6 @@ import { PLANNING_RIBBON_ID, TIMESHEETS_RIBBON_ID } from 'hs-utils/constants/con
 export type Ribbon = {
     id: string;
     companyCode: string;
-    // start: Date;
-    // end: Date;
     selectedDate: Date;
     // planificationPeriodDTO: boolean;
 };
