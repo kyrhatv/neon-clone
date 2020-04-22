@@ -68,7 +68,6 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     onDateChanged
 }) => {
     const datePickerRef = useRef(null);
-    console.log(datePickerRef);
 
     const onChange = (args: ChangedEventArgs) => {
         onDateChanged(args.value);
