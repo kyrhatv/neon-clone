@@ -15,10 +15,32 @@ import { enableRipple } from '@syncfusion/ej2-base';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { setCulture } from '@syncfusion/ej2-base';
+import { loadCldr } from '@syncfusion/ej2-base';
+
+import * as gregorian from 'cldr-data/main/fr-CA/ca-gregorian.json';
+import * as numbers from 'cldr-data/main/fr-CA/numbers.json';
+import * as timeZoneNames from 'cldr-data/main/fr-CA/timeZoneNames.json';
+import * as numberingSystems from 'cldr-data/supplemental/numberingSystems.json';
+import * as weekData from 'cldr-data/supplemental/weekData.json';
+
+import { L10n } from '@syncfusion/ej2-base';
+enableRipple(true);
+
+setCulture('fr-CA');
+
+loadCldr(numberingSystems, gregorian, numbers, timeZoneNames, weekData);
+//load the locale object to set the localized placeholder value
+L10n.load({
+    'fr-CA': {
+        datepicker: {
+            placeholder: 'Prendre une date',
+            today: "Aujourd'hui"
+        }
+    }
+});
 
 library.add(fas);
-
-enableRipple(true);
 
 ReactDOM.render(
     <Provider store={store}>

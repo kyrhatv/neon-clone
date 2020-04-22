@@ -5,13 +5,13 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 import '../style.css'; //pour fix le bug de syncfusion pour Bootstrp4
 
 import { CalendarView, DayHeaderFormats } from '@syncfusion/ej2-calendars/src/calendar/calendar';
-
 import '@syncfusion/ej2-base/styles/bootstrap4.css';
 import '@syncfusion/ej2-buttons/styles/bootstrap4.css';
 import '@syncfusion/ej2-inputs/styles/bootstrap4.css';
 import '@syncfusion/ej2-popups/styles/bootstrap4.css';
 import '@syncfusion/ej2-react-calendars/styles/bootstrap.css';
 
+import { L10n } from '@syncfusion/ej2-base';
 export interface DatePickerProps {
     id: string;
     width?: 'auto' | string;
@@ -31,7 +31,7 @@ export interface DatePickerProps {
 }
 
 const defaultProps = {
-    id:"",
+    id: '',
     width: 'auto',
     allowEdit: true,
     cssClass: 'bootstrap4',
@@ -65,11 +65,21 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     value
 }) => {
     const datePickerRef = useRef(null);
-    console.log(datePickerRef);
-
+    
+    //load the locale object to set the localized placeholder value
+    L10n.load({
+        'fr-CA': {
+            datepicker: {
+                placeholder: 'Prendre une date',
+                today: "Aujourd'hui"
+            }
+        }
+    });
+    
     return (
         <DatePickerComponent
-            id={id}
+            id="datepicker"
+            locale="fr-CA"
             width={width}
             allowEdit={allowEdit}
             cssClass={cssClass}

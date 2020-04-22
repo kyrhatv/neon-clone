@@ -36,12 +36,12 @@ const Ribbon: FunctionComponent = () => {
                 <DatePicker
                     id="dasd"
                     width={'150px'}
-                    allowEdit
+                    // allowEdit
                     // isReadOnly
                     cssClass={'bootstrap4'}
                     dayHeaderFormat={'Short'}
                     depth={'Month'}
-                    firstDayOfWeek={0}
+                    // firstDayOfWeek={0}
                     max={new Date('2099-11-31')}
                     min={new Date('1999-01-01')}
                     showClearButton

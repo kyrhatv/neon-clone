@@ -49,6 +49,7 @@
         "@types/react-router-bootstrap": "^0.24.5",
         "airbnb-prop-types": "^2.15.0",
         "bootstrap": "^4.4.1",
+        "cldr-data": "^36.0.0",
         "i18next": "^19.4.3",
         "i18next-browser-languagedetector": "latest",
         "lodash": "^4.17.15",
