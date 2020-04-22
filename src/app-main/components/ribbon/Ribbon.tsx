@@ -48,6 +48,9 @@ const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
         setCurrentDay(new Date());
     };
 
+    const planifClickedHandler = () => {
+        setCurrentDay(moment(new Date()).add(nbOfWeeks, 'week').toDate());
+    };
     const onSelectedDateChange = (newDate: Date) => {
         setCurrentDay(newDate);
     };
@@ -59,7 +62,7 @@ const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
                     {t('ribbon.today')}
                 </Button>
                 <InlineSpace />
-                <Button size="sm" variant="dark">
+                <Button size="sm" variant="dark" onClick={planifClickedHandler}>
                     {t('ribbon.planif')}
                 </Button>
                 <InlineSpace />
