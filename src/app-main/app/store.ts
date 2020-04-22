@@ -3,10 +3,13 @@ import counterReducer from 'app-main/features/planning/test/counterSlice';
 
 import menusReducer from 'hs-components/sf-sidebar/menusSlice';
 
+import ribbonsReducer from '../../app-main/components/ribbon/ribbonsSlice';
+
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
-        menus: menusReducer
+        menus: menusReducer,
+        ribbons: ribbonsReducer
     }
 });
 

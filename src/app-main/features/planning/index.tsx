@@ -8,10 +8,12 @@ import { Demo } from './demo/Demo';
 
 import Ribbon from '../../components/ribbon';
 
+import { PLANNING_RIBBON_ID } from 'hs-utils/constants/constants';
+
 const Planning = (routerProps: { match: { path: any } }) => {
     return (
         <>
-            <Ribbon />
+            <Ribbon id={PLANNING_RIBBON_ID} />
             <PageContent>
                 <Switch>
                     <Route path={`${routerProps.match.path}/dashboard`} component={Demo} />

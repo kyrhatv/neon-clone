@@ -8,6 +8,7 @@ import 'styles/syncFusion-bootstrap4/bootstrap4.css';
 
 import Root from './app-main/app/Root';
 import './translations/i18n';
+
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { store } from './app-main/app/store';
@@ -15,6 +16,7 @@ import { enableRipple } from '@syncfusion/ej2-base';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
 
 library.add(fas);
 

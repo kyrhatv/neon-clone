@@ -1,6 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { RootStruct } from './RootStruct';
+import { useTranslation } from 'react-i18next';
+
+import moment from 'moment';
+import FR from 'translations/momentLocal';
 
 import Timesheets from '../features/timesheets';
 import Planning from '../features/planning';
@@ -12,6 +16,9 @@ import { ConfigSidebar } from 'hs-components/ConfigSidebar/ConfigSidebar';
 import './style.css';
 
 const Root: FunctionComponent = () => {
+    const [t, i18n] = useTranslation();
+
+    i18n.language === 'en' ? moment.locale('en') : moment.locale('fr', FR);
     return (
         <Router>
             <MainMenu struct={RootStruct} />

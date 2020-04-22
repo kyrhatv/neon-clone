@@ -1,6 +1,5 @@
-
-
 export const MAIN_MENU_ID = 'MAIN_MENU_ID';
 export const OPTIONS_MENU_ID = 'OPTIONS_MENU';
 
-
+export const PLANNING_RIBBON_ID = 'PLANNING_RIBBON_ID';
+export const TIMESHEETS_RIBBON_ID = 'TIMESHEETS_RIBBON_ID';

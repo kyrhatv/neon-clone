@@ -6,8 +6,8 @@ import { NavStruct } from 'app-main/utils/RootStructInterface';
 import { MenuContent } from './MenuContent/MenuContent';
 import { usePrevious } from 'hs-utils/hs-hooks';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectById, updateMenu } from '../sf-sidebar/menusSlice';
 import { RootState } from 'app-main/app/store';
+import { selectById, updateMenu } from '../sf-sidebar/menusSlice';
 import { MAIN_MENU_ID } from 'hs-utils/constants/constants';
 
 export const MainMenu: FunctionComponent<NavStruct> = ({ struct }) => {
