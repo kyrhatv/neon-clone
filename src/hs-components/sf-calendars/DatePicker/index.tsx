@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { FunctionComponent } from 'react';
-import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+import { DatePickerComponent, ChangedEventArgs } from '@syncfusion/ej2-react-calendars';
 
 import '../style.css'; //pour fix le bug de syncfusion pour Bootstrp4
 
@@ -27,13 +27,13 @@ export interface DatePickerProps {
     isReadOnly?: boolean;
     showClearButton?: boolean;
     value?: Date;
-    // onValueChange:
+    onDateChanged: Function;
 }
 
 const defaultProps = {
-    id:"",
+    id: '',
     width: 'auto',
-    allowEdit: true,
+    allowEdit: false,
     cssClass: 'bootstrap4',
     dayHeaderFormat: 'Short' as DayHeaderFormats,
     depth: 'Month' as CalendarView,
@@ -43,9 +43,11 @@ const defaultProps = {
     max: new Date('2099-11-31'),
     min: new Date('1999-00-01'),
     isReadOnly: false,
-    showClearButton: true,
-    value: new Date()
-    // onValueChange:
+    showClearButton: false,
+    value: new Date(),
+    onDateChanged: () => {
+        console.log('hello');
+    }
 };
 
 const DatePicker: FunctionComponent<DatePickerProps> = ({
@@ -62,14 +64,20 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     min,
     isReadOnly,
     showClearButton,
-    value
+    value,
+    onDateChanged
 }) => {
     const datePickerRef = useRef(null);
     console.log(datePickerRef);
 
+    const onChange = (args: ChangedEventArgs) => {
+        onDateChanged(args.value);
+    };
+
     return (
         <DatePickerComponent
             id={id}
+            change={onChange}
             width={width}
             allowEdit={allowEdit}
             cssClass={cssClass}
