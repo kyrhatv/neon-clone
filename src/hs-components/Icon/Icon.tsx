@@ -10,7 +10,7 @@ import {
     IconDefinition,
     findIconDefinition
 } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export interface IconProps {
     prefix?: IconPrefix;
@@ -29,7 +29,7 @@ const Icon: FunctionComponent<IconProps> = ({
 }) => {
     const lookup: IconLookup = { prefix: prefix, iconName: iconName };
     const iconDef: IconDefinition = findIconDefinition(lookup);
-
+    
     return <FontAwesomeIcon icon={iconDef} size={size} flip={flip} spin={isSpinning} />;
 };
 

@@ -32,7 +32,6 @@
     "simplifiedAbscence": "Simplified Abscence",
     "summary": "Summary",
     "timesheets": "Timesheets",
-
     "features": {
         "planning": {
             "title": "Planning",
@@ -83,5 +82,21 @@
         "todo": "Weekly process",
         "today": "Today",
         "planif": "Prevision"
-    }
+    },
+    "stateSelector": {
+        "planning": {
+            "NON_APPROVED": "Schedules Unapproved",
+            "PLANIFICATION": "Scheduling",
+            "APPROVED": "Schedules Approved",
+            "BIDDING_OPEN": "Shifts Bidding Opened",
+            "BIDDING_CLOSED": "Close Shifts Bidding"
+        },
+        "timesheets": {
+            "PERIOD_OPEN": "Open Period",
+            "PERIOD_CLOSED": "Close Period",
+            "INTERPRET_PERIOD": "Interpret Period",
+            "APPROVE_PERIOD": "Approve Period"
+        }
+    },
+    "step": "Step"
 }

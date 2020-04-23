@@ -32,7 +32,6 @@
     "simplifiedAbscence": "Abscence simplifiée",
     "summary": "Sommaire",
     "timesheets": "Feuilles de temps",
-
     "features": {
         "planning": {
             "title": "Planification",
@@ -84,5 +83,21 @@
         "todo": "Processus hebdomadaire",
         "today": "Aujourd'hui",
         "planif": "Planif."
-    }
+    },
+    "stateSelector": {
+        "planning": {
+            "NON_APPROVED": "Horaires non-approuvés",
+            "PLANIFICATION": "Planification",
+            "APPROVED": "Horaires approuvés",
+            "BIDDING_OPEN": "Enchères de quarts ouvertes",
+            "BIDDING_CLOSED": "Fermer Enchères de quarts"
+        },
+        "timesheets": {
+            "PERIOD_OPEN": "Période ouverte",
+            "PERIOD_CLOSED": "Fermer la période",
+            "INTERPRET_PERIOD": "Interpréter la période",
+            "APPROVE_PERIOD": "Approuver la période"
+        }
+    },
+    "step": "Étape"
 }
