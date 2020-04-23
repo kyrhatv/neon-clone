@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { PageContent } from 'hs-components/Layout';
+
+import Lines from './lines';
 import { Counter } from './test/Counter';
 import { Demo } from './demo/Demo';
 
@@ -16,9 +18,7 @@ const Planning = (routerProps: { match: { path: any } }) => {
                 <Switch>
                     <Route path={`${routerProps.match.path}/dashboard`} component={Demo} />
                     <Route path={`${routerProps.match.path}/schedules`} component={Counter} />
-                    <Route path={`${routerProps.match.path}/lines`}>
-                        <p>Planning > Lines</p>
-                    </Route>
+                    <Route path={`${routerProps.match.path}/lines`} component={Lines} />
                     <Route path={`${routerProps.match.path}/replacements`}>
                         <p>Planning > Replacements</p>
                     </Route>
