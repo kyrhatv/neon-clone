@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Stepper from 'hs-components/Stepper';
+import { StateSelector } from 'app-main/components/stateSelector';
 
 export function Dashboard() {
     const [t] = useTranslation();
@@ -25,20 +25,14 @@ export function Dashboard() {
             id: 'APPROVE_PERIOD',
             index: 4,
             displayText: t('stateSelector.timesheets.APPROVE_PERIOD')
-        },
+        }
     ];
 
-    const initialstep = 'PERIOD_OPEN';
+    const initialStep = 'PERIOD_OPEN';
 
     return (
         <>
-            <Stepper
-                id="state-Selector"
-                steps={steps}
-                iconShape={'circle'}
-                initialStep={initialstep}
-                withStepNumbers
-                stepTranslation={t('step')}></Stepper>
+            <StateSelector steps={steps} initialStepId={initialStep} />
 
             <div className="col-lg-12">
                 <p>

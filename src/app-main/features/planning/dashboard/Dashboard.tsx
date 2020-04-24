@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Stepper from 'hs-components/Stepper';
+
+import { StateSelector } from 'app-main/components/stateSelector';
 
 export function Dashboard() {
     const [t] = useTranslation();
-
     const steps = [
         {
             id: 'NON_APPROVED',
@@ -33,18 +33,11 @@ export function Dashboard() {
         }
     ];
 
-    const initialstep = 'NON_APPROVED';
+    const initialStep = 'NON_APPROVED';
 
     return (
         <>
-            <Stepper
-                id="state-Selector"
-                steps={steps}
-                iconShape={'circle'}
-                initialStep={initialstep}
-                withStepNumbers
-                stepTranslation={t('step')}></Stepper>
-
+            <StateSelector steps={steps} initialStepId={initialStep} />
             <div className="col-lg-12">
                 <p>
                     <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { FunctionComponent } from 'react';
 
@@ -14,23 +14,23 @@ type Step = {
 
 type StepperProps = {
     id: string;
+    currentStep: Step;
     steps: Step[];
-    initialStep: string;
     iconShape: 'circle' | 'square';
     withStepNumbers?: boolean;
     stepTranslation?: string;
+    onStepChanged: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, step: Step) => void;
 };
 
 const Stepper: FunctionComponent<StepperProps> = ({
     id,
     steps,
-    initialStep,
+    currentStep,
     iconShape,
     withStepNumbers = false,
-    stepTranslation = null
+    stepTranslation = null,
+    onStepChanged
 }) => {
-    const [currentStep, setcurrentStep] = useState(steps.find((step) => step.id === initialStep));
-
     const currentStepstyle = { color: '#007bff' };
     const defaultStyle = { textAlign: 'center', color: '#6c757d' };
 
@@ -47,7 +47,8 @@ const Stepper: FunctionComponent<StepperProps> = ({
                                 <button
                                     style={step.index <= currentStep.index ? currentStepstyle : defaultStyle}
                                     className="step-trigger"
-                                    onClick={() => setcurrentStep(step)}>
+                                    disabled={step.index !== currentStep.index + 1 && step.index !== currentStep.index}
+                                    onClick={(event) => onStepChanged(event, step)}>
                                     <Icon
                                         prefix={step.id === currentStep.id ? 'fas' : 'far'}
                                         iconName={iconShape}

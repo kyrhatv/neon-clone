@@ -85,6 +85,7 @@
         "planif": "Planif."
     },
     "stateSelector": {
+        "modalText": "Passer a l'étape suivante ?",
         "planning": {
             "NON_APPROVED": "Horaires non-approuvés",
             "PLANIFICATION": "Planification",
@@ -99,5 +100,14 @@
             "APPROVE_PERIOD": "Approuver la période"
         }
     },
-    "step": "Étape"
+    "step": "Étape",
+    "buttons": {
+        "yes": "Oui",
+        "no": "Non",
+        "ok": "Ok",
+        "cancel": "Annuler"
+    },
+    "confirmationModal": {
+        "title": "Confirmation"
+    }
 }
