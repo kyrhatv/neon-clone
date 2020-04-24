@@ -42,7 +42,7 @@ const Stepper: FunctionComponent<StepperProps> = ({
             <div className="bs-stepper-header">
                 {steps.map((step) => {
                     return (
-                        <>
+                        <React.Fragment key={step.id}>
                             <div style={{ textAlign: 'center' }} className="step" data-target="#test-l-1">
                                 <button
                                     style={step.index <= currentStep.index ? currentStepstyle : defaultStyle}
@@ -67,7 +67,7 @@ const Stepper: FunctionComponent<StepperProps> = ({
                                     style={step.index < currentStep.index ? activeLineStyle : defaultLineStyle}
                                     className="line"></div>
                             ) : null}
-                        </>
+                        </React.Fragment>
                     );
                 })}
             </div>

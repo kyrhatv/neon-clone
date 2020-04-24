@@ -11,8 +11,8 @@ import PeriodDisplay from './PeriodDisplay';
 
 import './style.css';
 
-import { selectById, updateRibbon } from './ribbonsSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { selectById } from './ribbonsSlice'; //, updateRibbon
+import { useSelector } from 'react-redux';//, useDispatch
 import { RootState } from 'app-main/app/store';
 
 type RibbonProps = {
@@ -21,7 +21,7 @@ type RibbonProps = {
 
 const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
     const [t] = useTranslation();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const ribbonState = useSelector((state: RootState) => selectById(state, id));
 
