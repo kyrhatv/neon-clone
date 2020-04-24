@@ -1,43 +1,76 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { StateSelector } from 'app-main/components/stateSelector';
+import { useTimeoutFn } from 'react-use';
+
+import StateSelector from 'app-main/components/stateSelector';
+
+import {
+    NON_APPROVED,
+    PLANIFICATION,
+    APPROVED,
+    BIDDING_OPEN,
+    BIDDING_CLOSED
+} from 'hs-utils/constants/stateSelectorConstants';
+
+import Toast from 'hs-components/st-Toast';
+import { Button } from 'react-bootstrap';
 
 export function Dashboard() {
     const [t] = useTranslation();
+
+    const [showToast, setShowToast] = useState(false);
+    // const [isReady, cancel, reset] = useTimeoutFn(fn, 3);
+
     const steps = [
         {
-            id: 'NON_APPROVED',
+            id: NON_APPROVED,
             index: 1,
-            displayText: t('stateSelector.planning.NON_APPROVED')
+            displayText: t('stateSelector.planning.' + NON_APPROVED),
+            allowedSteps: [PLANIFICATION],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'PLANIFICATION',
+            id: PLANIFICATION,
             index: 2,
-            displayText: t('stateSelector.planning.PLANIFICATION')
+            displayText: t('stateSelector.planning.' + PLANIFICATION),
+            allowedSteps: [NON_APPROVED, APPROVED],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'APPROVED',
+            id: APPROVED,
             index: 3,
-            displayText: t('stateSelector.planning.APPROVED')
+            displayText: t('stateSelector.planning.' + APPROVED),
+            allowedSteps: [PLANIFICATION, BIDDING_OPEN],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'BIDDING_OPEN',
+            id: BIDDING_OPEN,
             index: 4,
-            displayText: t('stateSelector.planning.BIDDING_OPEN')
+            displayText: t('stateSelector.planning.' + BIDDING_OPEN),
+            allowedSteps: [APPROVED, BIDDING_CLOSED],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'BIDDING_CLOSED',
+            id: BIDDING_CLOSED,
             index: 5,
-            displayText: t('stateSelector.planning.BIDDING_CLOSED')
+            displayText: t('stateSelector.planning.' + BIDDING_CLOSED),
+            allowedSteps: [],
+            visible: true,
+            irrevocable: false
         }
     ];
 
-    const initialStep = 'NON_APPROVED';
-
     return (
         <>
-            <StateSelector steps={steps} initialStepId={initialStep} />
+            <Button onClick={() => setShowToast(true)}>dsdsd</Button>
+            {showToast && <Toast type="info" isShown={showToast}></Toast>}
+
+            <StateSelector featureId="planning" steps={steps} initialStepId={NON_APPROVED} />
             <div className="col-lg-12">
                 <p>
                     <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac

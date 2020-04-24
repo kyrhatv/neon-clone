@@ -1,39 +1,73 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { StateSelector } from 'app-main/components/stateSelector';
+import StateSelector from 'app-main/components/stateSelector';
+
+import {
+    PERIOD_OPEN,
+    PERIOD_CLOSED,
+    INTERPRET_PERIOD,
+    APPROVE_PERIOD,
+    TRANSFER_PERIOD
+} from 'hs-utils/constants/stateSelectorConstants';
 
 export function Dashboard() {
     const [t] = useTranslation();
+    const allowUnapproved = true;
+
+    const hasTransferToPayState = true;
+
+    const getStepsForApproved = () => {
+        const prev = allowUnapproved ? INTERPRET_PERIOD : APPROVE_PERIOD;
+        const next = hasTransferToPayState ? TRANSFER_PERIOD : APPROVE_PERIOD;
+        return [prev, next];
+    };
 
     const steps = [
         {
-            id: 'PERIOD_OPEN',
+            id: PERIOD_OPEN,
             index: 1,
-            displayText: t('stateSelector.timesheets.PERIOD_OPEN')
+            displayText: t('stateSelector.timesheets.' + PERIOD_OPEN),
+            allowedSteps: [PERIOD_CLOSED],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'PERIOD_CLOSED',
+            id: PERIOD_CLOSED,
             index: 2,
-            displayText: t('stateSelector.timesheets.PERIOD_CLOSED')
+            displayText: t('stateSelector.timesheets.' + PERIOD_CLOSED),
+            allowedSteps: [PERIOD_OPEN, INTERPRET_PERIOD],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'INTERPRET_PERIOD',
+            id: INTERPRET_PERIOD,
             index: 3,
-            displayText: t('stateSelector.timesheets.INTERPRET_PERIOD')
+            displayText: t('stateSelector.timesheets.' + INTERPRET_PERIOD),
+            allowedSteps: [PERIOD_CLOSED, APPROVE_PERIOD],
+            visible: true,
+            irrevocable: false
         },
         {
-            id: 'APPROVE_PERIOD',
+            id: APPROVE_PERIOD,
             index: 4,
-            displayText: t('stateSelector.timesheets.APPROVE_PERIOD')
+            displayText: t('stateSelector.timesheets.' + APPROVE_PERIOD),
+            allowedSteps: getStepsForApproved(),
+            visible: true,
+            irrevocable: !allowUnapproved
+        },
+        {
+            id: TRANSFER_PERIOD,
+            index: 5,
+            displayText: t('stateSelector.timesheets.' + TRANSFER_PERIOD),
+            allowedSteps: [],
+            visible: hasTransferToPayState,
+            irrevocable: true
         }
     ];
 
-    const initialStep = 'PERIOD_OPEN';
-
     return (
         <>
-            <StateSelector steps={steps} initialStepId={initialStep} />
-
+            <StateSelector featureId="timesheets" steps={steps} initialStepId={PERIOD_OPEN} />
             <div className="col-lg-12">
                 <p>
                     <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac

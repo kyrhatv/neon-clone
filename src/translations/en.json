@@ -84,7 +84,8 @@
         "planif": "Prevision"
     },
     "stateSelector": {
-        "modalText": "Proceed to next step ?",
+        "modalText": "Proceed to {{ stepName }} ?",
+        "irrevocableWarning": "This Action is irrevocable",
         "planning": {
             "NON_APPROVED": "Schedules Unapproved",
             "PLANIFICATION": "Scheduling",
@@ -96,7 +97,8 @@
             "PERIOD_OPEN": "Open Period",
             "PERIOD_CLOSED": "Close Period",
             "INTERPRET_PERIOD": "Interpret Period",
-            "APPROVE_PERIOD": "Approve Period"
+            "APPROVE_PERIOD": "Approve Period",
+            "TRANSFER_PERIOD": "Transfer Period"
         }
     },
     "step": "Step",

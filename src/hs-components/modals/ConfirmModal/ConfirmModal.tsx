@@ -9,7 +9,6 @@ import InlineSpace from 'hs-components/hs-component-space';
 
 type ConfirmModalTexts = {
     headerText: string;
-    message: string;
     confirmButtonText: string;
     cancelButtonText: string;
 };
@@ -17,21 +16,27 @@ type ConfirmModalTexts = {
 type ConfirmModalProps = {
     isShown: boolean;
     displayTexts: ConfirmModalTexts;
+    children: JSX.Element;
     onConfirm: () => void;
     onHide: () => void;
     onCancel: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-const ConfirmModal: FunctionComponent<ConfirmModalProps> = ({ isShown, displayTexts, onConfirm, onHide, onCancel }) => {
+const ConfirmModal: FunctionComponent<ConfirmModalProps> = ({
+    isShown,
+    displayTexts,
+    children,
+    onConfirm,
+    onHide,
+    onCancel
+}) => {
     return (
         <Modal show={isShown} onHide={onHide}>
             <Modal.Header closeButton>
                 <Modal.Title>{displayTexts.headerText}</Modal.Title>
             </Modal.Header>
 
-            <Modal.Body>
-                <p>{displayTexts.message}</p>
-            </Modal.Body>
+            <Modal.Body>{children}</Modal.Body>
 
             <Modal.Footer>
                 <Button variant="secondary" onClick={onCancel}>

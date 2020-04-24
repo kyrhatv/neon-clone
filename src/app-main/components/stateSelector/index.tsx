@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
+import { FunctionComponent } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import Stepper from 'hs-components/Stepper';
+import { Alert } from 'react-bootstrap';
 
 import { ConfirmModal } from 'hs-components/modals';
+import Icon from 'hs-components/Icon/Icon';
+import InlineSpace from 'hs-components/hs-component-space';
 
-export function StateSelector({ steps, initialStepId }) {
+import { Step } from 'hs-components/Stepper/Stepper';
+
+type StateSelectorProps = {
+    featureId: string;
+    steps: Step[];
+    initialStepId: string;
+};
+
+const StateSelector: FunctionComponent<StateSelectorProps> = ({ featureId, steps, initialStepId }) => {
     const [t] = useTranslation();
 
     const [isShown, setIsShown] = useState(false);
     const [currentStep, setcurrentStep] = useState(steps.find((step) => step.id === initialStepId));
-    const [nextStep, setNextStep] = useState(null);
+    const [nextStep, setNextStep] = useState(steps.find((step) => step.id === initialStepId));
 
     const confirmModalTexts = {
         headerText: t('confirmationModal.title'),
-        message: t('stateSelector.modalText'),
         confirmButtonText: t('buttons.yes'),
         cancelButtonText: t('buttons.no')
     };
@@ -24,11 +36,11 @@ export function StateSelector({ steps, initialStepId }) {
     };
     const modalConfirmHandler = () => {
         setcurrentStep(nextStep);
-        setNextStep(null);
+        setNextStep(currentStep);
         setIsShown(false);
     };
     const modalCloseHandler = () => {
-        setNextStep(null);
+        setNextStep(currentStep);
         setIsShown(false);
     };
 
@@ -39,8 +51,22 @@ export function StateSelector({ steps, initialStepId }) {
                 displayTexts={confirmModalTexts}
                 onConfirm={modalConfirmHandler}
                 onHide={modalCloseHandler}
-                onCancel={modalCloseHandler}
-            />
+                onCancel={modalCloseHandler}>
+                <>
+                    <p>
+                        {t('stateSelector.modalText', {
+                            stepName: t('stateSelector.' + featureId + '.' + nextStep.id)
+                        })}
+                    </p>
+
+                    {nextStep.irrevocable && (
+                        <Alert variant="warning">
+                            <Icon iconName="exclamation-triangle" />
+                            <InlineSpace /> {t('stateSelector.irrevocableWarning')}
+                        </Alert>
+                    )}
+                </>
+            </ConfirmModal>
             <Stepper
                 id="state-Selector"
                 steps={steps}
@@ -52,4 +78,5 @@ export function StateSelector({ steps, initialStepId }) {
             />
         </>
     );
-}
+};
+export default StateSelector;

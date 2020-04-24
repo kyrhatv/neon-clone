@@ -74,7 +74,6 @@
             "simplifiedAbscence": "Abscence simplifiée"
         }
     },
-
     "menus": {
         "pin": "Épingler le menu",
         "unpin": "Détacher le menu"
@@ -85,7 +84,8 @@
         "planif": "Planif."
     },
     "stateSelector": {
-        "modalText": "Passer a l'étape suivante ?",
+        "modalText": "Passer à l'étape {{ stepName }} ?",
+        "irrevocableWarning": "Cette action est irréversible",
         "planning": {
             "NON_APPROVED": "Horaires non-approuvés",
             "PLANIFICATION": "Planification",
@@ -97,7 +97,8 @@
             "PERIOD_OPEN": "Période ouverte",
             "PERIOD_CLOSED": "Fermer la période",
             "INTERPRET_PERIOD": "Interpréter la période",
-            "APPROVE_PERIOD": "Approuver la période"
+            "APPROVE_PERIOD": "Approuver la période",
+            "TRANSFER_PERIOD": "Transférer la période"
         }
     },
     "step": "Étape",

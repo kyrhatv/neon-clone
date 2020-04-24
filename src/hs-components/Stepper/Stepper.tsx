@@ -6,13 +6,16 @@ import Icon from 'hs-components/Icon/Icon';
 import './bs-stepper.min.css';
 import InlineSpace from 'hs-components/hs-component-space';
 
-type Step = {
+export type Step = {
     id: string;
     index: number;
     displayText: string;
+    irrevocable: boolean;
+    allowedSteps: string[];
+    visible: boolean;
 };
 
-type StepperProps = {
+export type StepperProps = {
     id: string;
     currentStep: Step;
     steps: Step[];
@@ -41,13 +44,17 @@ const Stepper: FunctionComponent<StepperProps> = ({
         <div id={id} className="bs-stepper" style={{ margin: '20px' }}>
             <div className="bs-stepper-header">
                 {steps.map((step) => {
+                    if (step.visible === false) {
+                        return null;
+                    }
+
                     return (
                         <React.Fragment key={step.id}>
                             <div style={{ textAlign: 'center' }} className="step" data-target="#test-l-1">
                                 <button
                                     style={step.index <= currentStep.index ? currentStepstyle : defaultStyle}
                                     className="step-trigger"
-                                    disabled={step.index !== currentStep.index + 1 && step.index !== currentStep.index}
+                                    disabled={!currentStep.allowedSteps.includes(step.id)}
                                     onClick={(event) => onStepChanged(event, step)}>
                                     <Icon
                                         prefix={step.id === currentStep.id ? 'fas' : 'far'}
