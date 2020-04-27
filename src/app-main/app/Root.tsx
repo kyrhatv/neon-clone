@@ -8,6 +8,7 @@ import FR from 'translations/momentLocal';
 
 import Timesheets from '../features/timesheets';
 import Planning from '../features/planning';
+import Organisation from '../features/organisation';
 
 import { PageHeader } from 'hs-components/Layout';
 import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
@@ -32,6 +33,7 @@ const Root: FunctionComponent = () => {
                     </Route>
                     <Route path="/planning" component={Planning} />
                     <Route path="/timesheets" component={Timesheets} />
+                    <Route path="/organisation" component={Organisation} />
                     <Route path="/about">
                         <p>About</p>
                     </Route>

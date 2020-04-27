@@ -53,11 +53,8 @@ export const MultipleCategoriesMenuContent: FunctionComponent<MultipleCategories
                     .filter((child) => child.subCategoryId === category.categoryId)
                     .map((menuItem) => {
                         return (
-                            <Accordion.Collapse eventKey={category.categoryId}>
-                                <LinkContainer
-                                    key={menu.key + menuItem.key}
-                                    to={menu.link + menuItem.link}
-                                    onClick={clickHandler}>
+                            <Accordion.Collapse key={menu.key + menuItem.key} eventKey={category.categoryId}>
+                                <LinkContainer to={menu.link + menuItem.link} onClick={clickHandler}>
                                     <Card.Body className={linkStyle} key={category.categoryId}>
                                         <h6>{t(menuItem.key)}</h6>
                                     </Card.Body>

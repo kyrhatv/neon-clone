@@ -1,127 +1,130 @@
-import * as React from 'react';
-import { DashboardLayoutComponent, PanelModel } from '@syncfusion/ej2-react-layouts';
-import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
-import './Dashboard.css';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useToggle, useUpdateEffect } from 'react-use';
 
-export class Dashboard extends React.Component {
-    public dashboardObj: DashboardLayoutComponent | null = null;
-    private cellSpacing: number[] = [5, 5];
-    private count: number = 8;
+import StateSelector from 'app-main/components/stateSelector';
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.renderComplete();
-        });
-    }
+import {
+    NON_APPROVED,
+    PLANIFICATION,
+    APPROVED,
+    BIDDING_OPEN,
+    BIDDING_CLOSED
+} from 'hs-utils/constants/stateSelectorConstants';
 
-    onCloseIconHandler(event: any): void {
-        let proxy: any = this;
-        let panel: any = event.target;
-        if (panel.offsetParent) {
-            proxy.dashboardObj.removePanel(panel.offsetParent.id);
+import Toast from 'hs-components/st-Toast';
+import { Button } from 'react-bootstrap';
+
+export function Dashboard() {
+    const [t] = useTranslation();
+
+    const [showToast, setShowToast] = useState(false);
+    const [on, toggleToast] = useToggle(false);
+
+    useUpdateEffect(() => {
+        setShowToast(true);
+        const timer = setTimeout(() => {
+            setShowToast(false);
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, [on]);
+
+    const steps = [
+        {
+            id: NON_APPROVED,
+            index: 1,
+            displayText: t('stateSelector.planning.' + NON_APPROVED),
+            allowedSteps: [PLANIFICATION],
+            visible: true,
+            irrevocable: false
+        },
+        {
+            id: PLANIFICATION,
+            index: 2,
+            displayText: t('stateSelector.planning.' + PLANIFICATION),
+            allowedSteps: [NON_APPROVED, APPROVED],
+            visible: true,
+            irrevocable: false
+        },
+        {
+            id: APPROVED,
+            index: 3,
+            displayText: t('stateSelector.planning.' + APPROVED),
+            allowedSteps: [PLANIFICATION, BIDDING_OPEN],
+            visible: true,
+            irrevocable: false
+        },
+        {
+            id: BIDDING_OPEN,
+            index: 4,
+            displayText: t('stateSelector.planning.' + BIDDING_OPEN),
+            allowedSteps: [APPROVED, BIDDING_CLOSED],
+            visible: true,
+            irrevocable: false
+        },
+        {
+            id: BIDDING_CLOSED,
+            index: 5,
+            displayText: t('stateSelector.planning.' + BIDDING_CLOSED),
+            allowedSteps: [],
+            visible: true,
+            irrevocable: false
         }
-    }
+    ];
 
-    btnClick(): void {
-        let proxy: any = this;
-        let panel: PanelModel[] = [
-            {
-                id: this.count.toString() + '_layout',
-                sizeX: 1,
-                sizeY: 1,
-                row: 0,
-                col: 0,
-                content:
-                    '<span id="close" class="e-close-icon e-clear-icon"/><div class="text-align">' +
-                    this.count.toString() +
-                    '</div>'
-            }
-        ];
-        proxy.dashboardObj.addPanel(panel[0]);
+    return (
+        <>
+            <p>show : {showToast.toString()}</p>
 
-        const element = document.getElementById(this.count.toString() + '_layout');
-        if (element !== null) {
-            const closeIcon: any = element.querySelector('.e-clear-icon');
-            closeIcon.addEventListener('click', this.onCloseIconHandler.bind(this));
-        }
-        this.count = this.count + 1;
-    }
+            <Button onClick={toggleToast}>dsdsd</Button>
 
-    renderComplete() {
-        let closeElement: any = document.querySelectorAll('.e-clear-icon');
-        for (let i: number = 0; i < closeElement.length; i++) {
-            closeElement[i].addEventListener('click', this.onCloseIconHandler.bind(this));
-        }
-    }
+            {showToast && (
+                <Toast type="warning" isShown={on} message={t('stateSelector.planning.' + BIDDING_CLOSED)}></Toast>
+            )}
 
-    public render(): JSX.Element {
-        return (
-            <div>
-                <div id="default_target" className="control-section">
-                    <div className="addContainer">
-                        <ButtonComponent id="add" cssClass="e-info" onClick={this.btnClick.bind(this)}>
-                            Add Panel
-                        </ButtonComponent>
-                    </div>
-                    <DashboardLayoutComponent
-                        id="default_dashboard"
-                        columns={5}
-                        ref={scope => {
-                            this.dashboardObj = scope;
-                        }}
-                        cellSpacing={this.cellSpacing}
-                        allowResizing={true}>
-                        <div id="one" className="e-panel" data-row="0" data-col="0" data-sizex="1" data-sizey="1">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">0</div>
-                            </div>
-                        </div>
-                        <div id="two" className="e-panel" data-row="1" data-col="0" data-sizeX="1" data-sizeY="2">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">1</div>
-                            </div>
-                        </div>
-                        <div id="three" className="e-panel" data-row="0" data-col="1" data-sizeX="2" data-sizeY="2">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">2</div>
-                            </div>
-                        </div>
-                        <div id="four" className="e-panel" data-row="2" data-col="1" data-sizeX="1" data-sizeY="1">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">3</div>
-                            </div>
-                        </div>
-                        <div id="five" className="e-panel" data-row="2" data-col="2" data-sizeX="2" data-sizeY="1">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">4</div>
-                            </div>
-                        </div>
-                        <div id="six" className="e-panel" data-row="0" data-col="3" data-sizeX="1" data-sizeY="1">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">5</div>
-                            </div>
-                        </div>
-                        <div id="seven" className="e-panel" data-row="1" data-col="3" data-sizeX="1" data-sizeY="1">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">6</div>
-                            </div>
-                        </div>
-                        <div id="eight" className="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="3">
-                            <span id="close" className="e-close-icon e-clear-icon" />
-                            <div className="e-panel-container">
-                                <div className="text-align">7</div>
-                            </div>
-                        </div>
-                    </DashboardLayoutComponent>
-                </div>
+            <StateSelector featureId="planning" steps={steps} initialStepId={NON_APPROVED} />
+            <div className="col-lg-12">
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac
+                    turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
+                    eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat
+                    eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum
+                    sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. in turpis pulvinar
+                    facilisis. Ut felis.
+                </p>
+                <h2>Header Level 2</h2>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                </ol>
+                <h3>Header Level 3</h3>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus. </li>
+                </ul>
             </div>
-        );
-    }
+            <div className="col-lg-12">
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac
+                    turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
+                    eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat
+                    eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum
+                    sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. in turpis pulvinar
+                    facilisis. Ut felis.
+                </p>
+                <h2>Header Level 2</h2>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                </ol>
+                <h3>Header Level 3</h3>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus. </li>
+                </ul>
+            </div>
+        </>
+    );
 }

@@ -32,7 +32,6 @@
     "simplifiedAbscence": "Abscence simplifiée",
     "summary": "Sommaire",
     "timesheets": "Feuilles de temps",
-
     "features": {
         "planning": {
             "title": "Planification",
@@ -75,7 +74,6 @@
             "simplifiedAbscence": "Abscence simplifiée"
         }
     },
-
     "menus": {
         "pin": "Épingler le menu",
         "unpin": "Détacher le menu"
@@ -84,5 +82,33 @@
         "todo": "Processus hebdomadaire",
         "today": "Aujourd'hui",
         "planif": "Planif."
+    },
+    "stateSelector": {
+        "modalText": "Passer à l'étape {{ stepName }} ?",
+        "irrevocableWarning": "Cette action est irréversible",
+        "planning": {
+            "NON_APPROVED": "Horaires non-approuvés",
+            "PLANIFICATION": "Planification",
+            "APPROVED": "Horaires approuvés",
+            "BIDDING_OPEN": "Enchères de quarts ouvertes",
+            "BIDDING_CLOSED": "Fermer Enchères de quarts"
+        },
+        "timesheets": {
+            "PERIOD_OPEN": "Période ouverte",
+            "PERIOD_CLOSED": "Fermer la période",
+            "INTERPRET_PERIOD": "Interpréter la période",
+            "APPROVE_PERIOD": "Approuver la période",
+            "TRANSFER_PERIOD": "Transférer la période"
+        }
+    },
+    "step": "Étape",
+    "buttons": {
+        "yes": "Oui",
+        "no": "Non",
+        "ok": "Ok",
+        "cancel": "Annuler"
+    },
+    "confirmationModal": {
+        "title": "Confirmation"
     }
 }
