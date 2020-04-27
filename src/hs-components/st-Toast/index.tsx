@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { FunctionComponent } from 'react';
-import { ToastComponent, ToastBeforeOpenArgs } from '@syncfusion/ej2-react-notifications';
+import { ToastComponent } from '@syncfusion/ej2-react-notifications';
 
 import '@syncfusion/ej2-base/styles/bootstrap4.css';
 import '@syncfusion/ej2-react-buttons/styles/bootstrap4.css';
@@ -15,9 +15,10 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
 export type ToastProps = {
     type: 'info' | 'warning' | 'danger' | 'success';
     isShown: boolean;
+    message: string;
 };
 
-const Toast: FunctionComponent<ToastProps> = ({ type, isShown }) => {
+const Toast: FunctionComponent<ToastProps> = ({ type, isShown, message = 'error' }) => {
     const toastRef = useRef(null);
 
     const toastCreated = () => {
@@ -46,9 +47,9 @@ const Toast: FunctionComponent<ToastProps> = ({ type, isShown }) => {
         return (
             <Row>
                 <Col md={12}>
-                    <Icon iconName={types['info'].iconName as IconName} size="1x" />
+                    <Icon iconName={types[type].iconName as IconName} size="1x" />
                     <InlineSpace />
-                    <span>error</span>
+                    <span>{message}</span>
                 </Col>
             </Row>
         );
@@ -57,14 +58,12 @@ const Toast: FunctionComponent<ToastProps> = ({ type, isShown }) => {
     return (
         <ToastComponent
             ref={toastRef}
-            cssClass={types['info'].class}
-            // beforeOpen={beforeOpen}
+            cssClass={types[type].class}
             created={toastCreated}
             position={{ X: 'Right', Y: 'Bottom' }}
             width="auto"
             height="auto"
             content={contentTemplate}
-            // buttons={buttons}
             showProgressBar={true}
         />
     );

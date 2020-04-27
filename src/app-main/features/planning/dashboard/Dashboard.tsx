@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useToggle, useUpdateEffect } from 'react-use';
 
@@ -75,8 +75,12 @@ export function Dashboard() {
     return (
         <>
             <p>show : {showToast.toString()}</p>
+
             <Button onClick={toggleToast}>dsdsd</Button>
-            {showToast && <Toast type="info" isShown={on}></Toast>}
+
+            {showToast && (
+                <Toast type="warning" isShown={on} message={t('stateSelector.planning.' + BIDDING_CLOSED)}></Toast>
+            )}
 
             <StateSelector featureId="planning" steps={steps} initialStepId={NON_APPROVED} />
             <div className="col-lg-12">
