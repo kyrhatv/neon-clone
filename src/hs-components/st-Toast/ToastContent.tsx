@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { FunctionComponent } from 'react';
-import { ToastComponent, ToastBeforeOpenArgs } from '@syncfusion/ej2-react-notifications';
+import { ToastComponent } from '@syncfusion/ej2-react-notifications';
 
 import '@syncfusion/ej2-base/styles/bootstrap4.css';
 import '@syncfusion/ej2-react-buttons/styles/bootstrap4.css';
@@ -16,6 +16,7 @@ export type ToastProps = {
     type: 'info' | 'warning' | 'danger' | 'success';
     isShown: boolean;
 };
+
 
 const Toast: FunctionComponent<ToastProps> = ({ type, isShown }) => {
     const toastRef = useRef(null);
@@ -48,7 +49,7 @@ const Toast: FunctionComponent<ToastProps> = ({ type, isShown }) => {
                 <Col md={12}>
                     <Icon iconName={types['info'].iconName as IconName} size="1x" />
                     <InlineSpace />
-                    <span>error</span>
+                    <span>test</span>
                 </Col>
             </Row>
         );

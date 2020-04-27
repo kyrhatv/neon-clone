@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { useTimeoutFn } from 'react-use';
+import { useToggle, useUpdateEffect } from 'react-use';
 
 import StateSelector from 'app-main/components/stateSelector';
 
@@ -20,7 +19,15 @@ export function Dashboard() {
     const [t] = useTranslation();
 
     const [showToast, setShowToast] = useState(false);
-    // const [isReady, cancel, reset] = useTimeoutFn(fn, 3);
+    const [on, toggleToast] = useToggle(false);
+
+    useUpdateEffect(() => {
+        setShowToast(true);
+        const timer = setTimeout(() => {
+            setShowToast(false);
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, [on]);
 
     const steps = [
         {
@@ -67,8 +74,9 @@ export function Dashboard() {
 
     return (
         <>
-            <Button onClick={() => setShowToast(true)}>dsdsd</Button>
-            {showToast && <Toast type="info" isShown={showToast}></Toast>}
+            <p>show : {showToast.toString()}</p>
+            <Button onClick={toggleToast}>dsdsd</Button>
+            {showToast && <Toast type="info" isShown={on}></Toast>}
 
             <StateSelector featureId="planning" steps={steps} initialStepId={NON_APPROVED} />
             <div className="col-lg-12">
