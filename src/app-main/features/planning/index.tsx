@@ -4,6 +4,8 @@ import { PageContent } from 'hs-components/Layout';
 
 import Lines from './lines';
 import { Counter } from './test/Counter';
+import QuartRequirements from './quart-requirements';
+
 import Dashboard from './dashboard';
 import Ribbon from '../../components/ribbon';
 
@@ -17,6 +19,7 @@ const Planning = (routerProps: { match: { path: any } }) => {
                 <Switch>
                     <Route path={`${routerProps.match.path}/dashboard`} component={Dashboard} />
                     <Route path={`${routerProps.match.path}/schedules`} component={Counter} />
+                    <Route path={`${routerProps.match.path}/quartRequirements`} component={QuartRequirements} />
                     <Route path={`${routerProps.match.path}/lines`} component={Lines} />
                     <Route path={`${routerProps.match.path}/replacements`}>
                         <p>Planning > Replacements</p>
