@@ -82,11 +82,9 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
             ref={sidebarRef}
             width={width}
             target={'.content'}>
-            <Col>
-                <Row>{children}</Row>
-            </Col>
+            {children}
             <Container fluid>
-                <Row className="footer">
+                <Row >
                     <Col md={12}>
                         <Button variant="primary" onClick={onPinChanged} block>
                             <Icon iconName="thumbtack" />
@@ -96,6 +94,7 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
                     </Col>
                 </Row>
             </Container>
+
         </SidebarComponent>
     );
 };

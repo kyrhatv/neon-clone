@@ -1,0 +1,10 @@
+.configButtonContainer {
+    position: relative;
+    height: 100%;
+}
+
+.configButtonWrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

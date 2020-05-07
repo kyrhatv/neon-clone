@@ -12,7 +12,9 @@ import Organisation from '../features/organisation';
 
 import { PageHeader } from 'hs-components/Layout';
 import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
-import { ConfigSidebar } from 'hs-components/ConfigSidebar/ConfigSidebar';
+import ConfigSidebar from 'hs-components/ConfigSidebar/ConfigSidebar';
+
+import PlanningConfigSidebar from '../components/configSidebarMenus/planning';
 
 import './style.css';
 
@@ -23,10 +25,20 @@ const Root: FunctionComponent = () => {
     return (
         <Router>
             <MainMenu struct={RootStruct} />
-            <ConfigSidebar></ConfigSidebar>
+            <ConfigSidebar>
+                <>
+                    <Switch>
+                        <Route path="/planning">
+                            <Route path="/planning" component={PlanningConfigSidebar} />
+                        </Route>
+                        <Route path="/timesheets">
+                            <p>Profile</p>
+                        </Route>
+                    </Switch>
+                </>
+            </ConfigSidebar>
             <div className="e-main-content">
-                <PageHeader></PageHeader>
-
+                <PageHeader />
                 <Switch>
                     <Route path="/planning" component={Planning} />
                     <Route path="/timesheets" component={Timesheets} />

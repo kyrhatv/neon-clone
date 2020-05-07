@@ -1,14 +1,16 @@
-import React from 'react';
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import SideBar from 'hs-components/sf-sidebar';
 
+import { Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
 import { RootState } from '../../app-main/app/store';
 
 import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
-export const ConfigSidebar: FunctionComponent = () => {
+type ConfigSidebarProps = { children: JSX.Element };
+
+const ConfigSidebar: FunctionComponent<ConfigSidebarProps> = ({ children }) => {
     const menuState = useSelector((state: RootState) => selectById(state, OPTIONS_MENU_ID));
     const dispatch = useDispatch();
 
@@ -29,8 +31,10 @@ export const ConfigSidebar: FunctionComponent = () => {
             isPinned={menuState.isPinned}
             onPinChanged={pinChangedHandler}
             closeOnDocumentClick={closeOnDocumentClick}
-            width={'200px'}>
-            <h1>Hello</h1>
+            width={'250px'}>
+            <>{children}</>
         </SideBar>
     );
 };
+
+export default ConfigSidebar;

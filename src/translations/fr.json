@@ -180,7 +180,19 @@
 
     "ShiftRequirements": {
         "title": "Besoins par Quarts",
-        "shifts": "Quarts"
+        "shifts": "Quarts",
+        "configs": {
+            "displayOptions": "Options d'affichage",
+            "filterByOrder": "Filtrer par commande",
+            "filterCriteria": "Filtres",
+            "SortCriteria": "Tris",
+            "hierarchy": "Hiérarchie",
+            "subDivs": "Sous-divisions",
+            "underAndOver": "Uniquement les sous/sur-couverts",
+            "nonWork": "Afficher absences et non-dispos",
+            "countOnlyEmployees": "Exclure les quarts au remplacement de la couverture",
+            "filterByAffDiv": "Filtrer par affectation/division"
+        }
     },
 
     "simpledate": {

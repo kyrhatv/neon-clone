@@ -179,7 +179,19 @@
     },
     "ShiftRequirements": {
         "title": "Shift Requirements",
-        "shifts": "Shifts"
+        "shifts": "Shifts",
+        "configs": {
+            "displayOptions": "Display Options",
+            "filterByOrder": "Filter by order",
+            "filterCriteria": "Filter",
+            "SortCriteria": "Sort",
+            "hierarchy": "Hierarchy",
+            "subDivs": "Sub-divisions",
+            "underAndOver": "Only the under/over-covered",
+            "nonWork": "Show absences and not available",
+            "countOnlyEmployees": "Exclude replacement shifts from coverage",
+            "filterByAffDiv": "Filter by affectation/division"
+        }
     },
     "simpledate": {
         "shortdays": {
