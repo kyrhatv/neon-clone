@@ -1,0 +1,54 @@
+.requirementCell {
+    text-align: center;
+    vertical-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.requirementCell .badge {
+    width: 100%;
+    height: 100%;
+}
+
+.requirementCell .badge-primary {
+    color: #004085;
+    border-color: #004085;
+    background-color: #cce5ff;
+}
+.requirementCell .badge-primary .form-control {
+    border-color: #004085;
+    background-color: #cce5ff;
+    text-align: center;
+}
+
+.requirementCell .badge-danger {
+    color: #721c24;
+    border-color: #721c24;
+    background-color: #f8d7da;
+}
+
+.requirementCell .badge-danger .form-control {
+    border-color: #721c24;
+    background-color: #f8d7da;
+    text-align: center;
+}
+
+.requirementCell .badge-light {
+    color: #818182;
+    border-color: #818182;
+    background-color: #fefefe;
+}
+
+.requirementCell .badge-light .form-control {
+    border-color: #818182;
+    background-color: #fefefe;
+    text-align: center;
+}
+
+
+.requirementCell .name-display{
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    padding-top: '5px';
+}

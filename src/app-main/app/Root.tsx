@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { RootStruct } from './RootStruct';
 import { useTranslation } from 'react-i18next';
 
@@ -28,9 +28,6 @@ const Root: FunctionComponent = () => {
                 <PageHeader></PageHeader>
 
                 <Switch>
-                    <Route exact path="/">
-                        <p>HOME</p>
-                    </Route>
                     <Route path="/planning" component={Planning} />
                     <Route path="/timesheets" component={Timesheets} />
                     <Route path="/organisation" component={Organisation} />
@@ -39,6 +36,9 @@ const Root: FunctionComponent = () => {
                     </Route>
                     <Route path="/profile">
                         <p>Profile</p>
+                    </Route>
+                    <Route path={'/'}>
+                        <Redirect to="/planning/dashboard" />
                     </Route>
                 </Switch>
             </div>

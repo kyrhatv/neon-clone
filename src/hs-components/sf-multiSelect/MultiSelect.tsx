@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FunctionComponent } from 'react';
 import {
     FilteringEventArgs,
     CheckBoxSelection,
     Inject,
     MultiSelectComponent,
-    MultiSelectChangeEventArgs,
-    SelectEventArgs,
-    RemoveEventArgs
+    MultiSelectChangeEventArgs
 } from '@syncfusion/ej2-react-dropdowns';
 import { Query } from '@syncfusion/ej2-data';
-
-import { SortOrder } from '@syncfusion/ej2-lists';
 
 import '@syncfusion/ej2-base/styles/bootstrap.css';
 import '@syncfusion/ej2-buttons/styles/bootstrap.css';

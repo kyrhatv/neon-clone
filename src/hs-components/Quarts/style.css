@@ -1,0 +1,104 @@
+.Quart {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    border-radius: 2px;
+    margin: 4px;
+    box-shadow: 0 0 2px #bdbdbd;
+    position: relative;
+}
+.Quart--clickable {
+    transition: box-shadow 0.15s;
+}
+.Quart--clickable:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(41, 124, 253, 0.25);
+}
+.Quart__header {
+    background-color: #dfdfdf;
+    margin-left: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 11px;
+    padding: 1px 10px 1px 4px;
+}
+.Quart__header__type {
+    margin-right: 3px;
+}
+.Quart__header__source {
+    position: absolute;
+    right: 2px;
+    margin-top: 2px;
+}
+.Quart__footer {
+    background-color: #f4f4f4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 1px 10px 1px 4px;
+}
+.Quart__footer__type {
+    margin-right: 3px;
+}
+.Quart__footer__source {
+    position: absolute;
+    right: 2px;
+    margin-top: 2px;
+}
+.Quart__right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+}
+.Quart__tasks-number {
+    display: block;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    background-color: #3da5e5;
+}
+.Quart__options {
+    padding: 1px 4px;
+    border-radius: 2px 0;
+}
+.Quart__options:hover {
+    background-color: #3b73af;
+    color: #fff;
+    cursor: pointer;
+}
+.Quart__icon {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+.Assignation {
+    border-left: 8px solid;
+    padding: 6px 3px;
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Assignation.NON_DISPONIBILITY {
+    background: repeating-linear-gradient(45deg, #efefef, #efefef 10px, #e2e2e2 10px, #e2e2e2 20px);
+}
+.Assignation--multi {
+    border-left: 8px solid;
+    padding: 3px 1.5px;
+    line-height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top: 1px dotted #bdbdbd;
+}
+.Assignation--multi:first-child {
+    border-top: 0 none;
+}
+.Assignation--non-dispo {
+    background: repeating-linear-gradient(45deg, #efefef, #efefef 10px, #e2e2e2 10px, #e2e2e2 20px);
+}
+.Assignation__affectation {
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    padding-right: 25px;
+}

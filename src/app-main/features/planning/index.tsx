@@ -24,9 +24,6 @@ const Planning = (routerProps: { match: { path: any } }) => {
                     <Route path={`${routerProps.match.path}/replacements`}>
                         <p>Planning > Replacements</p>
                     </Route>
-                    <Route exact path={`${routerProps.match.path}/`}>
-                        <Redirect to={`${routerProps.match.path}/dashboard`} />
-                    </Route>
                 </Switch>
             </PageContent>
         </>
