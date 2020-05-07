@@ -5,10 +5,13 @@
     height: 100%;
 }
 
-
 .requirementCell .badge {
     width: 100%;
     height: 100%;
+}
+
+.requirementCell .form-control {
+    font-weight: bold;
 }
 
 .requirementCell .badge-primary {
@@ -46,9 +49,8 @@
     text-align: center;
 }
 
-
-.requirementCell .name-display{
+.requirementCell .name-display {
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
     padding-top: '5px';
 }
