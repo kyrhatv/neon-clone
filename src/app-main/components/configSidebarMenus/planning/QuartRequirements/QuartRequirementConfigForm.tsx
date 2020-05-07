@@ -14,7 +14,7 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
 
     return (
         <>
-            <Container fluid>
+            <Container style={{ paddingTop: '15px' }} fluid>
                 <Form.Group controlId="commandFilter">
                     <Form.Label>
                         <h6>{t('ShiftRequirements.configs.filterByOrder')}</h6>
@@ -93,13 +93,13 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
                         <DivisionAffectationSelector />
                     </Form>
                 </Form.Group>
-                <Form.Group controlId="">
+                <div style={{ paddingBottom: '5px' }}>
                     <Button>
                         <Icon iconName="cogs" />
                         <InlineSpace />
                         Parametres des besoins Par Quarts
                     </Button>
-                </Form.Group>
+                </div>
             </Container>
         </>
     );
