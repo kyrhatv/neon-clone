@@ -15,7 +15,7 @@ import './style.css';
 
 const Planning = (routerProps: { match: { path: any } }) => {
     return (
-        <div className="page-with-date-ribbon page-container">
+        <div className="page-container">
             <Ribbon id={PLANNING_RIBBON_ID} />
             <PageContent>
                 <Switch>
