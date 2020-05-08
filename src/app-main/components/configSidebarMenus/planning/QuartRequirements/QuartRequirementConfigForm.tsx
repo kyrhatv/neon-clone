@@ -90,14 +90,26 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
                         <h6>{t('ShiftRequirements.configs.filterByAffDiv')}</h6>
                     </Form.Label>
                     <Form>
-                        <DivisionAffectationSelector />
+                        <Form.Control as="select" size="sm" custom>
+                            <option>Montréal</option>
+                            <option>Chicoutimi</option>
+                            <option>Abscence</option>
+                            <option>NON DISPO</option>
+                            <option>RH</option>
+                            <option>VACANCES</option>
+                            <option>Développement</option>
+                            <option>Implantation</option>
+                            <option>Support</option>
+                        </Form.Control>
+
+                        {/* <DivisionAffectationSelector /> */}
                     </Form>
                 </Form.Group>
                 <div style={{ paddingBottom: '5px' }}>
-                    <Button>
+                    <Button variant="primary" size="sm" block>
                         <Icon iconName="cogs" />
                         <InlineSpace />
-                        Parametres des besoins Par Quarts
+                        {t('ShiftRequirements.configs.PlanningParameters')}
                     </Button>
                 </div>
             </Container>

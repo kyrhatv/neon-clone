@@ -56,7 +56,7 @@ const RequirementCell: FunctionComponent<RequirementCellProps> = ({ requirement 
             <div className="requirementCell">
                 <h5>
                     <Badge
-                        variant={(variant as unknown) as BadgeProps['variant']}
+                        variant={(getBadgeVariant() as unknown) as BadgeProps['variant']}
                         onDoubleClick={() => setIsShown(true)}>
                         <Row className="align-items-center h-100" noGutters>
                             <Col className="mx-auto" md="4">

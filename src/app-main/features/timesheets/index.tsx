@@ -8,7 +8,7 @@ import { TIMESHEETS_RIBBON_ID } from 'hs-utils/constants/constants';
 
 const Timesheets = (routerProps: { match: { path: any } }) => {
     return (
-        <>
+        <div className="page-with-date-ribbon page-container">
             <Ribbon id={TIMESHEETS_RIBBON_ID} />
             <PageContent>
                 <Switch>
@@ -19,7 +19,7 @@ const Timesheets = (routerProps: { match: { path: any } }) => {
                     </Route>
                 </Switch>
             </PageContent>
-        </>
+        </div>
     );
 };
 

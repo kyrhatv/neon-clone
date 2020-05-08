@@ -182,6 +182,7 @@
         "title": "Besoins par Quarts",
         "shifts": "Quarts",
         "configs": {
+            "PlanningParameters":"Paramètres de Planification",
             "displayOptions": "Options d'affichage",
             "filterByOrder": "Filtrer par commande",
             "filterCriteria": "Filtres",

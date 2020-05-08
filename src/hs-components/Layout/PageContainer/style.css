@@ -1,0 +1,8 @@
+.page-container {
+    display: inline-block;
+    vertical-align: top;
+    /* overflow-y: scroll; */
+    height: calc(100% - 64px);
+    min-height: calc(100% - 64px);
+    max-height: calc(100% - 64px);
+}
