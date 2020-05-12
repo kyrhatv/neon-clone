@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FunctionComponent } from 'react';
+import { Button } from 'react-bootstrap';
 
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
@@ -9,12 +10,30 @@ import Quart from 'hs-components/Quarts';
 import RequirementCell from './RequirementCell';
 import InlineSpace from 'hs-components/hs-component-space';
 import Icon from 'hs-components/Icon/Icon';
-import { Button } from 'react-bootstrap';
+
+import { RootState } from 'app-main/app/store';
+import { useSelector } from 'react-redux';
+
+import { selectById } from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
 
 type QuartRequirementProps = {};
 
 const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
     const [t] = useTranslation();
+
+    const QuartRequirementsConfigs = useSelector((state: RootState) => selectById(state, 'requirementsConfigs'));
+
+    const {
+        id,
+        filterByOrderSearch,
+        filterCriteria,
+        SortCriteria,
+        showSubDivs,
+        showUnderAndOver,
+        showNonWork,
+        countOnlyEmployees,
+        filterByAffDivSelection
+    } = QuartRequirementsConfigs;
 
     const addShiftClickHandler = () => {
         console.log('add clicked ');
@@ -35,7 +54,7 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
             ),
             sortable: false,
             width: 400,
-            accessor: (props) => <Quart />
+            accessor: () => <Quart />
         },
         {
             id: 'monday',
@@ -91,7 +110,7 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
                 { dayIndex: 5, dayName: 'Saturday', requirement: 0, utilization: 0, assignedEmployeeIds: [] },
                 { dayIndex: 6, dayName: 'Sunday', requirement: 0, utilization: 0, assignedEmployeeIds: [] }
             ],
-            age: 13
+            iscovered: true
         },
         {
             Requirement: [
@@ -109,30 +128,39 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
                 { dayIndex: 5, dayName: 'Saturday', requirement: 0, utilization: 0, assignedEmployeeIds: [] },
                 { dayIndex: 6, dayName: 'Sunday', requirement: 0, utilization: 0, assignedEmployeeIds: [] }
             ],
-            age: 13
+            iscovered: false
         }
     ];
+
+    // const getfilteredData = () => {
+    //     if (showUnderAndOver) {
+    //         return data.filter((data) => data.iscovered === true);
+    //     }
+    //     return data;
+    // };
+
     return (
         <>
+            {JSON.stringify(QuartRequirementsConfigs)}
             <ReactTable
                 data={data}
                 columns={columns}
                 defaultPageSize={5}
                 className="-striped -highlight"
-                SubComponent={(row) => {
-                    return (
-                        <div style={{ backgroundColor: '#f7f7f7' }}>
-                            <div style={{ padding: '15px' }}>
-                                <ReactTable
-                                    data={data}
-                                    columns={columns}
-                                    defaultPageSize={10}
-                                    className="-striped -highlight"
-                                />
-                            </div>
-                        </div>
-                    );
-                }}
+                // SubComponent={(row) => {
+                //     return (
+                //         <div style={{ backgroundColor: '#f7f7f7' }}>
+                //             <div style={{ padding: '15px' }}>
+                //                 <ReactTable
+                //                     data={data}
+                //                     columns={columns}
+                //                     defaultPageSize={10}
+                //                     className="-striped -highlight"
+                //                 />
+                //             </div>
+                //         </div>
+                //     );
+                // }}
             />
         </>
     );

@@ -8,9 +8,8 @@ const PlanningConfigSidebar = (routerProps: { match: { path: any } }) => {
         <Switch>
             <Route path={`${routerProps.match.path}/dashboard`}>DASHBOARDCONFIG</Route>
             <Route path={`${routerProps.match.path}/quartRequirements`} component={QuartRequirementConfigForm} />
-
             <Route path={`${routerProps.match.path}/replacements`}>
-                <p>Planning > Replacements</p>
+                <p>Planning - Replacements</p>
             </Route>
         </Switch>
     );

@@ -28,8 +28,6 @@ const RequirementCell: FunctionComponent<RequirementCellProps> = ({ requirement 
         if (requirement.utilization < requirement.requirement) return 'primary';
     };
 
-    const variant = getBadgeVariant();
-
     const confirmModalTexts = {
         headerText: t('confirmationModal.title'),
         confirmButtonText: t('buttons.yes'),
