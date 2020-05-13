@@ -1,3 +1,3 @@
-import QuartRequirementConfigForm from './QuartRequirementConfigForm';
+import QuartRequirementConfigFormContainer from './QuartRequirementConfigFormContainer';
 
-export default QuartRequirementConfigForm;
+export default QuartRequirementConfigFormContainer;

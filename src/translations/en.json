@@ -181,6 +181,7 @@
         "title": "Shift Requirements",
         "shifts": "Shifts",
         "configs": {
+            "filterConfigs" :"Filter Configs",
             "PlanningParameters": "Planning Parameters",
             "displayOptions": "Display Options",
             "filterByOrder": "Filter by order",

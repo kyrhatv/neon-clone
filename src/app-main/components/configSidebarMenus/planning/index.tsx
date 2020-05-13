@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import QuartRequirementConfigForm from './QuartRequirements/QuartRequirementConfigForm';
+import QuartRequirementConfigForm from './QuartRequirements/QuartRequirementConfigFormContainer';
 
 const PlanningConfigSidebar = (routerProps: { match: { path: any } }) => {
     return (
