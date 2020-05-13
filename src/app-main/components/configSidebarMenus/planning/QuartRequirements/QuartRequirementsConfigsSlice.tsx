@@ -11,6 +11,7 @@ export type QuartRequirementsConfigs = {
     showNonWork: boolean;
     countOnlyEmployees: boolean;
     filterByAffDivSelection: string | undefined;
+    showDetailledRequirementCell: boolean;
 };
 
 const quartRequirementsConfigsAdapter = createEntityAdapter<QuartRequirementsConfigs>({});
@@ -25,6 +26,7 @@ const INITIAL_STATE = quartRequirementsConfigsAdapter.addOne(emptyInitialState, 
     showUnderAndOver: false,
     showNonWork: true,
     countOnlyEmployees: true,
+    showDetailledRequirementCell: true,
     filterByAffDivSelection: undefined
 });
 

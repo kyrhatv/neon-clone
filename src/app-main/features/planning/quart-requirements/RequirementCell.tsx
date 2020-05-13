@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FunctionComponent } from 'react';
-import { Col, Row, Badge, BadgeProps, FormControl } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip, Col, Row, Badge, BadgeProps, FormControl } from 'react-bootstrap';
 import 'react-table/react-table.css';
 import { useTranslation } from 'react-i18next';
 
@@ -15,9 +15,9 @@ type Requirement = {
     assignedEmployeeIds: string[];
 };
 
-type RequirementCellProps = { requirement: Requirement };
+type RequirementCellProps = { requirement: Requirement; isDetailedView: boolean };
 
-const RequirementCell: FunctionComponent<RequirementCellProps> = ({ requirement }) => {
+const RequirementCell: FunctionComponent<RequirementCellProps> = ({ requirement, isDetailedView }) => {
     const [t] = useTranslation();
 
     const [isShown, setIsShown] = useState(false);
@@ -49,45 +49,81 @@ const RequirementCell: FunctionComponent<RequirementCellProps> = ({ requirement 
                 onConfirm={modalConfirmHandler}
                 onHide={modalCloseHandler}
                 onCancel={modalCloseHandler}>
-                <span>da</span>
+                <span>modale d'assignation</span>
             </ConfirmModal>
             <div className="requirementCell">
                 <h5>
-                    <Badge
-                        variant={(getBadgeVariant() as unknown) as BadgeProps['variant']}
-                        onDoubleClick={() => setIsShown(true)}>
-                        <Row className="align-items-center h-100" noGutters>
-                            <Col className="mx-auto" md="4">
-                                {requirement.utilization}
-                            </Col>
-                            <Col className="mx-auto" md="auto">
-                                /
-                            </Col>
-                            <Col className="mx-auto" md="4">
-                                <FormControl
-                                    size="sm"
-                                    type="text"
-                                    placeholder={requirement.requirement.toString()}
-                                    value={requirement.requirement}
-                                />
-                            </Col>
-                        </Row>
-                        <Row className=" align-items-center h-100">
-                            <Col className=" name-display mx-auto" md="12">
-                                Jean-Michel Laforge
-                            </Col>
-                        </Row>
-                        <Row className="align-items-center h-100">
-                            <Col className="name-display mx-auto" md="12">
-                                Bill Gates
-                            </Col>
-                        </Row>
-                        <Row className="align-items-center h-100">
-                            <Col className="name-display mx-auto" md="12">
-                                Mark Zuckerberg
-                            </Col>
-                        </Row>
-                    </Badge>
+                    {isDetailedView ? (
+                        <Badge
+                            variant={(getBadgeVariant() as unknown) as BadgeProps['variant']}
+                            onDoubleClick={() => setIsShown(true)}>
+                            <Row className="align-items-center h-100" noGutters>
+                                <Col className="mx-auto" md="4">
+                                    {requirement.utilization}
+                                </Col>
+                                <Col className="mx-auto" md="auto">
+                                    /
+                                </Col>
+                                <Col className="mx-auto" md="4">
+                                    <FormControl
+                                        size="sm"
+                                        type="text"
+                                        placeholder={requirement.requirement.toString()}
+                                        value={requirement.requirement}
+                                    />
+                                </Col>
+                            </Row>
+                            <React.Fragment>
+                                <Row className=" align-items-center h-100">
+                                    <Col className=" name-display mx-auto" md="12">
+                                        Jean-Michel Laforge
+                                    </Col>
+                                </Row>
+                                <Row className="align-items-center h-100">
+                                    <Col className="name-display mx-auto" md="12">
+                                        Bill Gates
+                                    </Col>
+                                </Row>
+                                <Row className="align-items-center h-100">
+                                    <Col className="name-display mx-auto" md="12">
+                                        Mark Zuckerberg
+                                    </Col>
+                                </Row>
+                            </React.Fragment>
+                        </Badge>
+                    ) : (
+                        <OverlayTrigger
+                            key={'placement'}
+                            placement={'bottom'}
+                            overlay={
+                                <Tooltip id={`tooltip-bottom`}>
+                                    <div>Jean-Michel Laforge</div>
+                                    <div>Bill Gates</div>
+                                    <div>Mark Zuckerberg</div>
+                                </Tooltip>
+                            }>
+                            <Badge
+                                variant={(getBadgeVariant() as unknown) as BadgeProps['variant']}
+                                onDoubleClick={() => setIsShown(true)}>
+                                <Row className="align-items-center h-100" noGutters>
+                                    <Col className="mx-auto" md="4">
+                                        {requirement.utilization}
+                                    </Col>
+                                    <Col className="mx-auto" md="auto">
+                                        /
+                                    </Col>
+                                    <Col className="mx-auto" md="4">
+                                        <FormControl
+                                            size="sm"
+                                            type="text"
+                                            placeholder={requirement.requirement.toString()}
+                                            value={requirement.requirement}
+                                        />
+                                    </Col>
+                                </Row>
+                            </Badge>
+                        </OverlayTrigger>
+                    )}
                 </h5>
             </div>
         </>

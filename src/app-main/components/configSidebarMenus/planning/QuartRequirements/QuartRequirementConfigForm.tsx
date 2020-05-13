@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from 'hs-components/Icon/Icon';
-import { Button, Form, InputGroup, Container } from 'react-bootstrap';
+import { ButtonGroup, Button, Form, InputGroup, Container } from 'react-bootstrap';
 import InlineSpace from 'hs-components/hs-component-space';
 import { RootState } from 'app-main/app/store';
 import { useSelector, useDispatch } from 'react-redux';
@@ -30,6 +30,7 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
         showUnderAndOver,
         showNonWork,
         countOnlyEmployees,
+        showDetailledRequirementCell,
         filterByAffDivSelection
     } = QuartRequirementsConfigs;
 
@@ -38,9 +39,7 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
             <Container style={{ paddingTop: '15px' }} fluid>
                 <Form.Group controlId="commandFilter">
                     <Form.Label>
-                        <h6>
-                            {showSubDivs.toString()} {t('ShiftRequirements.configs.filterByOrder')}
-                        </h6>
+                        <h6>{t('ShiftRequirements.configs.filterByOrder')}</h6>
                     </Form.Label>
                     <InputGroup>
                         <InputGroup.Prepend>
@@ -100,6 +99,20 @@ const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormPr
                         <h6>{t('ShiftRequirements.configs.displayOptions')}</h6>
                     </Form.Label>
                     <Form>
+                        <Form.Check
+                            type="switch"
+                            id="subdivisionSwitch"
+                            checked={showDetailledRequirementCell}
+                            onChange={() =>
+                                dispatch(
+                                    updateQuartRequirementsConfigs({
+                                        id: id,
+                                        changes: { showDetailledRequirementCell: !showDetailledRequirementCell }
+                                    })
+                                )
+                            }
+                            label={t('ShiftRequirements.configs.detailledView')}
+                        />
                         <Form.Check
                             type="switch"
                             id="subdivisionSwitch"

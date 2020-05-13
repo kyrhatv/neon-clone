@@ -191,7 +191,8 @@
             "underAndOver": "Only the under/over-covered",
             "nonWork": "Show absences and not available",
             "countOnlyEmployees": "Exclude replacement shifts from coverage",
-            "filterByAffDiv": "Filter by affectation/division"
+            "filterByAffDiv": "Filter by affectation/division",
+            "detailledView": "Detailled View"
         }
     },
     "simpledate": {

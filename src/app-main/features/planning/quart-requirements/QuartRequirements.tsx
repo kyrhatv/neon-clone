@@ -32,6 +32,7 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
         showUnderAndOver,
         showNonWork,
         countOnlyEmployees,
+        showDetailledRequirementCell,
         filterByAffDivSelection
     } = QuartRequirementsConfigs;
 
@@ -59,37 +60,51 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
         {
             id: 'monday',
             Header: t('simpledate.days.mon'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[0]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[0]} />
+            )
         },
         {
             id: 'tuesday',
             Header: t('simpledate.days.tue'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[1]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[1]} />
+            )
         },
         {
             id: 'wednesday',
             Header: t('simpledate.days.wed'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[2]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[2]} />
+            )
         },
         {
             id: 'thursday',
             Header: t('simpledate.days.thu'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[3]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[3]} />
+            )
         },
         {
             id: 'friday',
             Header: t('simpledate.days.fri'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[4]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[4]} />
+            )
         },
         {
             id: 'saturday',
             Header: t('simpledate.days.sat'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[5]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[5]} />
+            )
         },
         {
             id: 'sunday',
             Header: t('simpledate.days.sun'),
-            accessor: (props) => <RequirementCell requirement={props.Requirement[6]} />
+            accessor: (props) => (
+                <RequirementCell isDetailedView={showDetailledRequirementCell} requirement={props.Requirement[6]} />
+            )
         }
     ];
 
