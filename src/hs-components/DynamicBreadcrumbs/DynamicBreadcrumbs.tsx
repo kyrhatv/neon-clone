@@ -33,7 +33,7 @@ export const DynamicBreadcrumbs: FunctionComponent<breadCrumbsProps> = ({ folder
                         return (
                             <li className="breadcrumb-item" key={path}>
                                 <a className="breadcrumbs-link" href={path}>
-                                    {t(navOption)}
+                                    {t('breadcrumbs.' + navOption)}
                                 </a>
                             </li>
                         );

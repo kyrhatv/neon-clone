@@ -4,7 +4,6 @@ import Icon from 'hs-components/Icon/Icon';
 import { Button, Form, Container } from 'react-bootstrap';
 import InlineSpace from 'hs-components/hs-component-space';
 
-import './style.css';
 import ConfigSearchbar from '../../ConfigSearchbar';
 
 import {
