@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FunctionComponent } from 'react';
 import { Button } from 'react-bootstrap';
 
@@ -18,22 +18,22 @@ import { selectById } from 'app-main/components/configSidebarMenus/planning/Quar
 
 type QuartRequirementProps = {};
 
-const QuartRequirements: FunctionComponent<QuartRequirementProps> = ({}) => {
+const QuartRequirements: FunctionComponent<QuartRequirementProps> = () => {
     const [t] = useTranslation();
 
     const QuartRequirementsConfigs = useSelector((state: RootState) => selectById(state, 'requirementsConfigs'));
 
     const {
-        id,
-        filterByOrderSearch,
-        filterCriteria,
-        SortCriteria,
-        showSubDivs,
-        showUnderAndOver,
-        showNonWork,
-        countOnlyEmployees,
-        showDetailledRequirementCell,
-        filterByAffDivSelection
+        // id,
+        // filterByOrderSearch,
+        // filterCriteria,
+        // SortCriteria,
+        // showSubDivs,
+        // showUnderAndOver,
+        // showNonWork,
+        // countOnlyEmployees,
+        // filterByAffDivSelection,
+        showDetailledRequirementCell
     } = QuartRequirementsConfigs;
 
     const addShiftClickHandler = () => {

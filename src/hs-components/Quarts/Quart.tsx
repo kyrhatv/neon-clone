@@ -9,7 +9,7 @@ import Icon from 'hs-components/Icon/Icon';
 import './style.css';
 export type StepperProps = {};
 
-const Quart: FunctionComponent<StepperProps> = ({}) => {
+const Quart: FunctionComponent<StepperProps> = () => {
     return (
         <div className="Quart">
             <Col md={12} style={{ paddingLeft: '0px' }}>
@@ -26,7 +26,6 @@ const Quart: FunctionComponent<StepperProps> = ({}) => {
                                 <Col md={4}>{`8h-17h (8h)`}</Col>
                             </Row>
                         </Row>
-
                     </Col>
                 </Row>
             </Col>

@@ -4,7 +4,7 @@ import MultiSelect from 'hs-components/sf-multiSelect';
 
 type LinesProps = {};
 
-const Lines: FunctionComponent<LinesProps> = ({}) => {
+const Lines: FunctionComponent<LinesProps> = () => {
     const [selectedValues, setselectedValues] = useState([]);
 
     const data: { [key: string]: Object }[] = [

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from 'hs-components/Icon/Icon';
-import { ButtonGroup, Button, Form, InputGroup, Container } from 'react-bootstrap';
+import { Button, Form, InputGroup, Container } from 'react-bootstrap';
 import InlineSpace from 'hs-components/hs-component-space';
 import { RootState } from 'app-main/app/store';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,7 +15,7 @@ import './style.css';
 
 type QuartRequirementConfigFormProps = {};
 
-const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormProps> = ({}) => {
+const QuartRequirementConfigForm: FunctionComponent<QuartRequirementConfigFormProps> = () => {
     const [t] = useTranslation();
     const QuartRequirementsConfigs = useSelector((state: RootState) => selectById(state, 'requirementsConfigs'));
 
