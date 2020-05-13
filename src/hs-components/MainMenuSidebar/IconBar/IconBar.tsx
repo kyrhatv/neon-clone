@@ -63,19 +63,33 @@ const IconBar: FunctionComponent<NavStruct> = ({ struct }) => {
                     </div>
                 </LinkContainer>
                 {struct.map((module) => {
+                    console.log(module);
                     const linkstyle = currentPath.includes(module.link) ? currentmoduleStyle : moduleStyle;
+
+                    if (module.key !== 'parameters') {
+                        return (
+                            <OverlayTrigger
+                                key={module.key}
+                                placement="right"
+                                delay={{ show: 250, hide: 200 }}
+                                overlay={<Tooltip id={module.key}>{t(module.key)}</Tooltip>}>
+                                <Nav.Item className={linkstyle}>
+                                    <Nav.Link onClick={() => toggleMenuHandler(module.key)}>
+                                        <Icon iconName={module.iconName} size="2x" />
+                                    </Nav.Link>
+                                </Nav.Item>
+                            </OverlayTrigger>
+                        );
+                    }
+
                     return (
-                        <OverlayTrigger
-                            key={module.key}
-                            placement="right"
-                            delay={{ show: 250, hide: 200 }}
-                            overlay={<Tooltip id={module.key}>{t(module.key)}</Tooltip>}>
-                            <Nav.Item className={linkstyle}>
-                                <Nav.Link onClick={() => toggleMenuHandler(module.key)}>
+                        <Nav.Item className={linkstyle}>
+                            <LinkContainer to={module.link}>
+                                <Nav.Link>
                                     <Icon iconName={module.iconName} size="2x" />
                                 </Nav.Link>
-                            </Nav.Item>
-                        </OverlayTrigger>
+                            </LinkContainer>
+                        </Nav.Item>
                     );
                 })}
             </Nav>

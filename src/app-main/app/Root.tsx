@@ -49,6 +49,9 @@ const Root: FunctionComponent = () => {
                     <Route path="/profile">
                         <p>Profile</p>
                     </Route>
+                    <Route path="/parameters">
+                        <p>parameters</p>
+                    </Route>
                     <Route path={'/'}>
                         <Redirect to="/planning/dashboard" />
                     </Route>

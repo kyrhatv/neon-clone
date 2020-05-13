@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import './style.css';
 
@@ -32,9 +33,9 @@ export const DynamicBreadcrumbs: FunctionComponent<breadCrumbsProps> = ({ folder
                         path !== navOption ? (path = path + '/' + navOption) : (path = navOption);
                         return (
                             <li className="breadcrumb-item" key={path}>
-                                <a className="breadcrumbs-link" href={path}>
-                                    {t('breadcrumbs.' + navOption)}
-                                </a>
+                                <LinkContainer to={path}>
+                                    <a className="breadcrumbs-link">{t('breadcrumbs.' + navOption)}</a>
+                                </LinkContainer>
                             </li>
                         );
                     })}

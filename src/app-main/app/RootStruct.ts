@@ -218,7 +218,7 @@ export const RootStruct: NavOption[] = [
     },
     {
         key: 'parameters',
-        link: '/parameter',
+        link: '/parameters',
         iconName: 'cog',
         hasSubCategories: false,
         subCategories: null,

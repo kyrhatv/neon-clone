@@ -14,9 +14,8 @@ const Timesheets = (routerProps: { match: { path: any } }) => {
                 <Switch>
                     <Route path={`${routerProps.match.path}/dashboard`} component={Dashboard}></Route>
                     <Route path={`${routerProps.match.path}/timesheets`} component={Dashboard}></Route>
-                    <Route exact path={`${routerProps.match.path}/`}>
-                        <h1>Timesheets</h1>
-                    </Route>
+                    <Route exact path={`${routerProps.match.path}/`} component={Dashboard} />
+                    <Route exact path={`${routerProps.match.path}`} component={Dashboard} />
                 </Switch>
             </PageContent>
         </div>
