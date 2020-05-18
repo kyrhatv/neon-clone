@@ -1,9 +1,10 @@
-import React from 'react';
-// import { useTranslation } from 'react-i18next';
+import React, { FunctionComponent } from 'react';
 
-export function Employees() {
-    // const [t] = useTranslation();
+type EmployeesProps = {};
 
+const Employees: FunctionComponent<EmployeesProps> = () => {
+    
     return <h1>Employees</h1>;
-}
- 
+};
+
+export default Employees;

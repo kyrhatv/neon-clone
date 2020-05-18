@@ -62,10 +62,10 @@ const IconBar: FunctionComponent<NavStruct> = ({ struct }) => {
                         <img src={logo} alt="" width="100%" className=" d-inline-block align-top logo" />
                     </div>
                 </LinkContainer>
-                {struct.map((module) => {
-                    const linkstyle = currentPath.includes(module.link) ? currentmoduleStyle : moduleStyle;
-
-                    if (module.key !== 'parameters') {
+                {struct
+                    .filter((module) => module.key !== 'parameters' && module.key !== 'profile')
+                    .map((module) => {
+                        const linkstyle = currentPath.includes(module.link) ? currentmoduleStyle : moduleStyle;
                         return (
                             <OverlayTrigger
                                 key={module.key}
@@ -79,33 +79,32 @@ const IconBar: FunctionComponent<NavStruct> = ({ struct }) => {
                                 </Nav.Item>
                             </OverlayTrigger>
                         );
-                    }
-
-                    return (
-                        <Nav.Item className={linkstyle}>
-                            <LinkContainer to={module.link}>
-                                <Nav.Link>
-                                    <Icon iconName={module.iconName} size="2x" />
-                                </Nav.Link>
-                            </LinkContainer>
-                        </Nav.Item>
-                    );
-                })}
-            </Nav>
-            <Nav variant="pills" className="flex-column icon-bar footer-settings ">
-                <div>
-                    <Nav.Item>
+                    })}
+                <div className="footer-settings ">
+                    <Nav.Item className="footer-link">
                         <Nav.Link onClick={changeLanguage}>
                             <div>{nextLanguage}</div>
                         </Nav.Link>
                     </Nav.Item>
-                    <OverlayTrigger placement="right" overlay={<Tooltip id="ds">j</Tooltip>}>
-                        <Nav.Item>
-                            <Nav.Link onClick={changeLanguage}>
-                                <Icon iconName="user-circle" size="2x" />
-                            </Nav.Link>
-                        </Nav.Item>
-                    </OverlayTrigger>
+                    {struct
+                        .filter((module) => module.key === 'parameters' || module.key === 'profile')
+                        .map((module) => {
+                            return (
+                                <OverlayTrigger
+                                    key={module.key}
+                                    placement="right"
+                                    delay={{ show: 250, hide: 200 }}
+                                    overlay={<Tooltip id={module.key}>{t(module.key)}</Tooltip>}>
+                                    <Nav.Item className="footer-link">
+                                        <LinkContainer to={module.link}>
+                                            <Nav.Link>
+                                                <Icon iconName={module.iconName} size="2x" />
+                                            </Nav.Link>
+                                        </LinkContainer>
+                                    </Nav.Item>
+                                </OverlayTrigger>
+                            );
+                        })}
                 </div>
             </Nav>
         </div>

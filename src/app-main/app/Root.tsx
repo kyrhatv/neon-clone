@@ -6,14 +6,12 @@ import { useTranslation } from 'react-i18next';
 import moment from 'moment';
 import FR from 'translations/momentLocal';
 
-import Timesheets from '../features/timesheets';
-import Planning from '../features/planning';
-import Organisation from '../features/organisation';
+import Features from '../features';
 
 import { PageHeader } from 'hs-components/Layout';
 import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
-import ConfigSidebar from 'hs-components/ConfigSidebar/ConfigSidebar';
 
+import ConfigSidebar from 'hs-components/ConfigSidebar/ConfigSidebar';
 import PlanningConfigSidebar from '../components/configSidebarMenus/planning';
 
 import './style.css';
@@ -26,32 +24,25 @@ const Root: FunctionComponent = () => {
         <Router>
             <MainMenu struct={RootStruct} />
             <ConfigSidebar>
-                <>
-                    <Switch>
-                        <Route path="/planning">
-                            <Route path="/planning" component={PlanningConfigSidebar} />
-                        </Route>
-                        <Route path="/timesheets">
-                            <p>Profile</p>
-                        </Route>
-                    </Switch>
-                </>
+                <Switch>
+                    <Route path="/planning">
+                        <Route path="/planning" component={PlanningConfigSidebar} />
+                    </Route>
+                    <Route path="/timesheets">
+                        <p>Profile</p>
+                    </Route>
+                </Switch>
             </ConfigSidebar>
             <div className="e-main-content">
                 <PageHeader />
                 <Switch>
-                    <Route path="/planning" component={Planning} />
-                    <Route path="/timesheets" component={Timesheets} />
-                    <Route path="/organisation" component={Organisation} />
-                    <Route path="/about">
-                        <p>About</p>
-                    </Route>
-                    <Route path="/profile">
-                        <p>Profile</p>
-                    </Route>
-                    <Route path="/parameters">
-                        <p>parameters</p>
-                    </Route>
+                    <Route path="/planning" component={Features.Planning} />
+                    <Route path="/timesheets" component={Features.Timesheets} />
+                    <Route path="/organisation" component={Features.Organisation} />
+                    <Route path="/analyze" component={Features.Analyze} />
+                    <Route path="/request" component={Features.Requests} />
+                    <Route path="/parameters" component={Features.Parameters} />
+                    <Route path="/profile" component={Features.Profile} />
                     <Route path={'/'}>
                         <Redirect to="/planning/dashboard" />
                     </Route>

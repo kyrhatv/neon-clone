@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import StateSelector from 'app-main/components/stateSelector';
 
@@ -10,7 +11,9 @@ import {
     TRANSFER_PERIOD
 } from 'hs-utils/constants/stateSelectorConstants';
 
-export function Dashboard() {
+type DashboardProps = {};
+
+const Dashboard: FunctionComponent<DashboardProps> = () => {
     const [t] = useTranslation();
     const allowUnapproved = true;
 
@@ -112,4 +115,5 @@ export function Dashboard() {
             </div>
         </>
     );
-}
+};
+export default Dashboard;

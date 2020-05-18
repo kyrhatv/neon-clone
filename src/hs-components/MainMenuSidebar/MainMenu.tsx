@@ -24,14 +24,21 @@ export const MainMenu: FunctionComponent<NavStruct> = ({ struct }) => {
             dispatch(
                 updateMenu({
                     id: MAIN_MENU_ID,
-                    changes: { isPinned: !menuState.isPinned, isShown: false, currentModule: undefined }
+                    changes: {
+                        isPinned: !menuState.isPinned,
+                        isShown: false,
+                        currentModule: undefined
+                    }
                 })
             );
         } else {
             dispatch(
                 updateMenu({
                     id: MAIN_MENU_ID,
-                    changes: { isPinned: !menuState.isPinned, isShown: menuState.isShown }
+                    changes: {
+                        isPinned: !menuState.isPinned,
+                        isShown: menuState.isShown
+                    }
                 })
             );
         }
@@ -44,11 +51,11 @@ export const MainMenu: FunctionComponent<NavStruct> = ({ struct }) => {
                 id={MAIN_MENU_ID}
                 isShown={menuState.isPinned ? false : isShown}
                 showBackdrop={false}
-                closeOnDocumentClick={false}
                 position={'Left'}
                 type={menuState.isPinned ? 'Push' : 'Over'}
                 isPinned={menuState.isPinned}
                 onPinChanged={pinChangedHandler}
+                closeOnDocumentClick={false}
                 width={'250px'}>
                 <MenuContent struct={struct} />
             </SideBar>

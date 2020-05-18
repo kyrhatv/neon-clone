@@ -53,8 +53,8 @@ export const RootStruct: NavOption[] = [
                 subCategoryId: 'scheduleProccess'
             },
             {
-                key: 'features.planning.order',
-                link: '/order',
+                key: 'features.planning.orders',
+                link: '/orders',
                 subCategoryId: 'scheduleProccess'
             },
             {
@@ -63,8 +63,8 @@ export const RootStruct: NavOption[] = [
                 subCategoryId: 'scheduleProccess'
             },
             {
-                key: 'features.planning.project',
-                link: '/project',
+                key: 'features.planning.projects',
+                link: '/projects',
                 subCategoryId: 'scheduleProccess'
             }
         ]
@@ -97,13 +97,13 @@ export const RootStruct: NavOption[] = [
                 subCategoryId: null
             },
             {
-                key: 'features.timesheets.correction',
+                key: 'features.timesheets.corrections',
                 link: '/corrections',
                 subCategoryId: null
             },
             {
                 key: 'features.timesheets.batchEntry',
-                link: '/batch-entry',
+                link: '/batchEntry',
                 subCategoryId: null
             },
             {
@@ -140,13 +140,13 @@ export const RootStruct: NavOption[] = [
         subCategories: null,
         children: [
             {
-                key: 'features.analyze.publication',
-                link: '/report-configuration',
+                key: 'features.analyze.reports',
+                link: '/reports',
                 subCategoryId: null
             },
             {
-                key: 'features.analyze.reports',
-                link: '/reports',
+                key: 'features.analyze.publication',
+                link: '/report-configuration',
                 subCategoryId: null
             }
         ]
@@ -160,22 +160,17 @@ export const RootStruct: NavOption[] = [
         children: [
             {
                 key: 'features.request.list',
-                link: '/request-list',
+                link: '/list',
                 subCategoryId: null
             },
             {
                 key: 'features.request.declaration',
-                link: '/request-declaration',
-                subCategoryId: null
-            },
-            {
-                key: 'features.request.declaration',
-                link: '/request-declaration',
+                link: '/declaration',
                 subCategoryId: null
             },
             {
                 key: 'features.request.simplifiedAbscence',
-                link: '/request-absence-simplified',
+                link: '/simplifiedAbscence',
                 subCategoryId: null
             }
         ]
@@ -184,6 +179,14 @@ export const RootStruct: NavOption[] = [
         key: 'parameters',
         link: '/parameters',
         iconName: 'cog',
+        hasSubCategories: false,
+        subCategories: null,
+        children: []
+    },
+    {
+        key: 'profile',
+        link: '/profile',
+        iconName: 'user-circle',
         hasSubCategories: false,
         subCategories: null,
         children: []
