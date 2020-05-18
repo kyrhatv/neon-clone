@@ -70,9 +70,15 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
         }
     }, [closeOnDocumentClick]);
 
+    const onCreate = () => {
+        sidebarRef.current.element.style.visibility = '';
+    };
+
     return (
         <SidebarComponent
             id={id}
+            created={onCreate}
+            style={{ visibility: 'hidden' }}
             className={'sidebar'}
             type={type}
             position={position}
