@@ -42,7 +42,7 @@ export const MainMenu: FunctionComponent<NavStruct> = ({ struct }) => {
             <IconBar struct={struct}></IconBar>
             <SideBar
                 id={MAIN_MENU_ID}
-                isShown={isShown}
+                isShown={menuState.isPinned ? false : isShown}
                 showBackdrop={false}
                 closeOnDocumentClick={false}
                 position={'Left'}

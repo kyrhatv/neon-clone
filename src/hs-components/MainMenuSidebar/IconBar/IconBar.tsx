@@ -63,7 +63,6 @@ const IconBar: FunctionComponent<NavStruct> = ({ struct }) => {
                     </div>
                 </LinkContainer>
                 {struct.map((module) => {
-                    console.log(module);
                     const linkstyle = currentPath.includes(module.link) ? currentmoduleStyle : moduleStyle;
 
                     if (module.key !== 'parameters') {
