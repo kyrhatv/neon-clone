@@ -19,7 +19,6 @@ const Planning = (routerProps: { match: { path: any } }) => {
             <Ribbon id={PLANNING_RIBBON_ID} />
             <PageContent>
                 <Switch>
-                    <Route path={`${routerProps.match.path}`} component={Dashboard} />
                     <Route path={`${routerProps.match.path}/dashboard`} component={Dashboard} />
                     <Route path={`${routerProps.match.path}/schedules`} component={Counter} />
                     <Route path={`${routerProps.match.path}/quartRequirements`} component={QuartRequirements} />
@@ -27,6 +26,7 @@ const Planning = (routerProps: { match: { path: any } }) => {
                     <Route path={`${routerProps.match.path}/replacements`}>
                         <p>Planning - Replacements</p>
                     </Route>
+                    <Route path={`${routerProps.match.path}`} component={Dashboard} />
                 </Switch>
             </PageContent>
         </div>

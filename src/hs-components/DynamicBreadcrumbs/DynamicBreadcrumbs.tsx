@@ -2,6 +2,7 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import './style.css';
 
@@ -26,7 +27,7 @@ export const DynamicBreadcrumbs: FunctionComponent<breadCrumbsProps> = ({ folder
 
     let path = '';
     return (
-        <>
+        <div className="ts-breadcrumbs">
             <nav aria-label="breadcrumb" style={{ backgroundColor: '#282c34' }}>
                 <ol className="breadcrumb" style={{ backgroundColor: '#282c34' }}>
                     {folder.map((navOption) => {
@@ -34,13 +35,15 @@ export const DynamicBreadcrumbs: FunctionComponent<breadCrumbsProps> = ({ folder
                         return (
                             <li className="breadcrumb-item" key={path}>
                                 <LinkContainer to={path}>
-                                    <a className="breadcrumbs-link">{t('breadcrumbs.' + navOption)}</a>
+                                    <Button className="ts-link-Button" variant="link">
+                                        {t('breadcrumbs.' + navOption)}
+                                    </Button>
                                 </LinkContainer>
                             </li>
                         );
                     })}
                 </ol>
             </nav>
-        </>
+        </div>
     );
 };

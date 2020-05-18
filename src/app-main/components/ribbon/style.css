@@ -1,11 +1,15 @@
-.header-container-ribbon {
+.hs-ribbon .header-container-ribbon {
     background-color: #010101;
     color: #f0f0f0;
     top: 0;
     width: 100%;
     z-index: 500;
     height: 50px;
-    min-height: 50px; 
-    max-height: 50px; 
+    min-height: 50px;
+    max-height: 50px;
     padding: 5px;
+}
+
+.hs-ribbon .ribbon-row {
+    align-self: center;
 }

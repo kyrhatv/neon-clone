@@ -6,7 +6,14 @@ import { MAIN_MENU_ID, OPTIONS_MENU_ID } from '../../hs-utils/constants/constant
 export type Menu = {
     id: string;
     isShown: boolean;
-    currentModule: null | 'planning' | 'timesheets' | 'organisation' | 'analyze' | 'request' | 'parameter';
+    currentModule:
+        | undefined
+        | 'features.planning.title'
+        | 'features.timesheets.title'
+        | 'features.organisation.title'
+        | 'features.analyze.title'
+        | 'features.request.title'
+        | 'parameter';
     isPinned: boolean;
 };
 
@@ -14,8 +21,8 @@ const menusAdapter = createEntityAdapter<Menu>({});
 const emptyInitialState = menusAdapter.getInitialState();
 
 const ENTITIES: Menu[] = [
-    { id: MAIN_MENU_ID, isShown: false, currentModule: 'planning', isPinned: false },
-    { id: OPTIONS_MENU_ID, isShown: false, currentModule: 'planning', isPinned: false }
+    { id: MAIN_MENU_ID, isShown: false, currentModule: undefined, isPinned: false },
+    { id: OPTIONS_MENU_ID, isShown: false, currentModule: undefined, isPinned: false }
 ];
 
 const INITIAL_STATE = menusAdapter.upsertMany(emptyInitialState, ENTITIES);

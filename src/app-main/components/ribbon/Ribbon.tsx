@@ -12,7 +12,7 @@ import PeriodDisplay from './PeriodDisplay';
 import './style.css';
 
 import { selectById } from './ribbonsSlice'; //, updateRibbon
-import { useSelector } from 'react-redux';//, useDispatch
+import { useSelector } from 'react-redux'; //, useDispatch
 import { RootState } from 'app-main/app/store';
 
 type RibbonProps = {
@@ -56,41 +56,43 @@ const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
     };
 
     return (
-        <Row className="header-container-ribbon" noGutters>
-            <Col md={12}>
-                <Button size="sm" variant="dark" onClick={todayClickedHandler}>
-                    {t('ribbon.today')}
-                </Button>
-                <InlineSpace />
-                <Button size="sm" variant="dark" onClick={planifClickedHandler}>
-                    {t('ribbon.planif')}
-                </Button>
-                <InlineSpace />
-                <ButtonGroup>
-                    <Button size="sm" variant="dark" onClick={prevClickedHandler}>
-                        <Icon iconName="chevron-left" />
+        <div className="hs-ribbon">
+            <Row className=" header-container-ribbon" noGutters>
+                <Col md={12} className="ribbon-row">
+                    <Button size="sm" variant="dark" onClick={todayClickedHandler}>
+                        {t('ribbon.today')}
                     </Button>
-                    <Button size="sm" variant="dark" onClick={nextClickedHandler}>
-                        <Icon iconName="chevron-right" />
+                    <InlineSpace />
+                    <Button size="sm" variant="dark" onClick={planifClickedHandler}>
+                        {t('ribbon.planif')}
                     </Button>
-                </ButtonGroup>
-                <InlineSpace />
-                <DatePicker
-                    id="dasd"
-                    width={'150px'}
-                    cssClass={'bootstrap4'}
-                    dayHeaderFormat={'Short'}
-                    depth={'Month'}
-                    firstDayOfWeek={0}
-                    max={new Date('2099-11-31')}
-                    min={new Date('1999-01-01')}
-                    value={currentDay}
-                    onDateChanged={onSelectedDateChange}
-                />
-                <InlineSpace />
-                <PeriodDisplay date={currentDay}></PeriodDisplay>
-            </Col>
-        </Row>
+                    <InlineSpace />
+                    <ButtonGroup>
+                        <Button size="sm" variant="dark" onClick={prevClickedHandler}>
+                            <Icon iconName="chevron-left" />
+                        </Button>
+                        <Button size="sm" variant="dark" onClick={nextClickedHandler}>
+                            <Icon iconName="chevron-right" />
+                        </Button>
+                    </ButtonGroup>
+                    <InlineSpace />
+                    <DatePicker
+                        id="dasd"
+                        width={'150px'}
+                        cssClass={'bootstrap4'}
+                        dayHeaderFormat={'Short'}
+                        depth={'Month'}
+                        firstDayOfWeek={0}
+                        max={new Date('2099-11-31')}
+                        min={new Date('1999-01-01')}
+                        value={currentDay}
+                        onDateChanged={onSelectedDateChange}
+                    />
+                    <InlineSpace />
+                    <PeriodDisplay date={currentDay}></PeriodDisplay>
+                </Col>
+            </Row>
+        </div>
     );
 };
 

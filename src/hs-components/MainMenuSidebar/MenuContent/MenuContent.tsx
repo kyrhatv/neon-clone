@@ -36,7 +36,7 @@ export const MenuContent: FunctionComponent<NavStruct> = ({ struct }) => {
     };
 
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{ width: '100%' }} className="hs-main-menu">
             {menu.hasSubCategories ? (
                 <>
                     {menu.subCategories.map((category) => {

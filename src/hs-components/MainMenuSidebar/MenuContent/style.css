@@ -1,4 +1,4 @@
-.menu-item-link {
+.hs-main-menu .menu-item-link {
     width: 100%;
     padding-left: 10px;
     padding-top: 10px;
@@ -8,38 +8,38 @@
     justify-content: left;
     align-content: left;
 }
-.link-container :hover {
+.hs-main-menu .link-container :hover {
     color: #fff;
     text-decoration: none;
     background-color: #010101;
 }
-.menu-item-link a {
+.hs-main-menu .menu-item-link a {
     color: #fff;
     text-decoration: none;
     background-color: transparent;
     width: 100%;
 }
 
-.nav-link {
+.hs-main-menu .nav-link {
     color: #fff;
 }
 
-.nav-link:hover {
+.hs-main-menu .nav-link:hover {
     color: #fff;
     background-color: #010101;
 }
 
-.non-collapse-menu-header {
+.hs-main-menu .non-collapse-menu-header {
     height: 64px;
     background-color: #282c34;
     border: 0 transparent;
 }
 
-.collapsable-menu-header {
+.hs-main-menu .collapsable-menu-header {
     height: 64px;
     background-color: #282c34;
     border: 0 transparent;
 }
-.collapsable-menu-header:hover {
+.hs-main-menu .collapsable-menu-header:hover {
     cursor: pointer;
 }

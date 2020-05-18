@@ -1,10 +1,36 @@
-.breadcrumbs-link {
+.ts-breadcrumbs .breadcrumbs-link {
     color: #fff;
     text-decoration: none;
     background-color: transparent;
 }
 
-.breadcrumb {
+.ts-breadcrumbs .breadcrumb {
     padding: 0;
+    padding-left: 1rem;
     margin-bottom: 0;
+}
+
+.ts-breadcrumbs .ts-link-Button .btn {
+    text-decoration: none;
+}
+.ts-breadcrumbs .btn-link {
+    padding-right: 0rem;
+    padding-left: 0.3rem;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: larger;
+    color: #f1f1f1;
+}
+.ts-breadcrumbs .btn-link:hover {
+    text-decoration: underline;
+}
+
+.ts-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0rem;
+    color: #f1f1f1;
+    font-size: larger;
+    font-weight: bolder;
+    vertical-align: middle;
+    content: '/';
 }
