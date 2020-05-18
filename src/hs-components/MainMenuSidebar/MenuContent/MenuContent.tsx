@@ -28,7 +28,7 @@ export const MenuContent: FunctionComponent<NavStruct> = ({ struct }) => {
     }
 
     const clickHandler = () => {
-        if (menuState.isPinned === false) {
+        if (!menuState.isPinned) {
             dispatch(
                 updateMenu({ id: MAIN_MENU_ID, changes: { isShown: !menuState.isShown, currentModule: undefined } })
             );
