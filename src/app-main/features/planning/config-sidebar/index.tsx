@@ -6,7 +6,9 @@ import QuartRequirementConfigForm from '../quart-requirements/config-sidebar-con
 const PlanningConfigSidebar = (routerProps: { match: { path: any } }) => {
     return (
         <Switch>
-            <Route path={`${routerProps.match.path}/dashboard`}>DASHBOARD CONFIG</Route>
+            <Route path={`${routerProps.match.path}/dashboard`}>
+                <p>Planning - dashboard</p>
+            </Route>
             <Route path={`${routerProps.match.path}/schedules`}> schedules Config</Route>
             <Route path={`${routerProps.match.path}/lines`}>lines config</Route>
             <Route path={`${routerProps.match.path}/replacements`}>
@@ -23,12 +25,14 @@ const PlanningConfigSidebar = (routerProps: { match: { path: any } }) => {
                 <p>Planning - orders</p>
             </Route>
             <Route path={`${routerProps.match.path}/positions`}>
-                <p>Planning - Replacements</p>
+                <p>Planning - positions</p>
             </Route>
             <Route path={`${routerProps.match.path}/projects`}>
-                <p>Planning - Replacements</p>
+                <p>Planning - projects</p>
             </Route>
-            <Route path={`${routerProps.match.path}`}>DASHBOARD CONFIG</Route>
+            <Route path={`${routerProps.match.path}`}>
+                <p>Planning - dashboard</p>
+            </Route>
         </Switch>
     );
 };

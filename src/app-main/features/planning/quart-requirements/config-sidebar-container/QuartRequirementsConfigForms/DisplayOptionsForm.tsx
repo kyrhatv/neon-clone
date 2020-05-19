@@ -34,7 +34,7 @@ const DisplayOptionsForm: FunctionComponent<DisplayOptionsFormProps> = () => {
             <Form>
                 <Form.Check
                     type="switch"
-                    id="subdivisionSwitch"
+                    id="showDetailsSwitch"
                     checked={showDetailledRequirementCell}
                     onChange={() =>
                         dispatch(

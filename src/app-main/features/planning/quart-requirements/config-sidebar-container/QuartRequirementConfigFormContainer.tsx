@@ -71,9 +71,13 @@ const QuartRequirementConfigFormContainer: FunctionComponent<QuartRequirementCon
                 />
             </Form.Group>
             {configs.map((config) => {
-                return showAll || config.displayText.toLowerCase().includes(searchInput.toLowerCase())
-                    ? config.component
-                    : null;
+                return (
+                    <React.Fragment key={config.id}>
+                        {showAll || config.displayText.toLowerCase().includes(searchInput.toLowerCase())
+                            ? config.component
+                            : null}
+                    </React.Fragment>
+                );
             })}
         </Container>
     );
