@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import RequestsList from './requestsList';
-import RequestDeclaration from './requestDeclaration';
-import AbscenceSimplified from './simplifiedAbscence';
+import RequestsList from './requests-list';
+import RequestDeclaration from './request-declaration';
+import AbscenceSimplified from './simplified-abscence';
 import { PageContent } from 'app-main/components/Layout';
 
 const Analyze = (routerProps: { match: { path: any } }) => {

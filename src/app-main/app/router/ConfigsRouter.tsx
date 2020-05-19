@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PlanningConfigSidebar from 'app-main/features/planning/configSidebar';
-import ConfigSidebar from 'app-main/components/configSidebarMenus/ConfigMenu/ConfigSidebar';
-import ParametersButton from 'app-main/components/configSidebarMenus/ConfigMenu/ParametersButton';
+import PlanningConfigSidebar from 'app-main/features/planning/config-sidebar';
+import ConfigSidebar from 'app-main/components/ConfigMenu/ConfigSidebar';
+import ParametersButton from 'app-main/components/ConfigMenu/ParametersButton';
 
 type ConfigsRouterProps = {};
 

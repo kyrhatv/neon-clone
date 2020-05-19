@@ -29,18 +29,16 @@ const ConfigSearchbar: FunctionComponent<ConfigSearchbarProps> = ({ searchData, 
     };
 
     return (
-        <>
-            <AutoCompleteComponent
-                id="atcelement"
-                showPopupButton
-                dataSource={searchData}
-                autofill
-                change={onSearchChangedHandler}
-                select={onSelectionChanged}
-                filtering={onFilter}
-                placeholder={placeHolder}
-            />
-        </>
+        <AutoCompleteComponent
+            id="atcelement"
+            showPopupButton
+            dataSource={searchData}
+            autofill
+            change={onSearchChangedHandler}
+            select={onSelectionChanged}
+            filtering={onFilter}
+            placeholder={placeHolder}
+        />
     );
 };
 

@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Container } from 'react-bootstrap';
 
-import ConfigSearchbar from 'app-main/components/configSidebarMenus/ConfigMenu/ConfigSearchbar';
+import ConfigSearchbar from 'app-main/components/ConfigMenu/ConfigSearchbar';
 
 import {
     FilterByOrderCommandForm,
