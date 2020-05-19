@@ -1,5 +1,4 @@
 import { Action, configureStore, ThunkAction, getDefaultMiddleware } from '@reduxjs/toolkit';
-import counterReducer from 'app-main/features/planning/test/counterSlice';
 
 import menusReducer from 'hs-components/sf-sidebar/menusSlice';
 
@@ -10,7 +9,6 @@ import quartRequirementsConfigsReducer from 'app-main/components/configSidebarMe
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
         menus: menusReducer,
         ribbons: ribbonsReducer,
         stateSelectors: stateSelectorReducer,
