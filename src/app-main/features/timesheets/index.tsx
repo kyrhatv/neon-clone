@@ -4,8 +4,7 @@ import { PageContent } from 'hs-components/Layout';
 
 import Ribbon from '../../components/ribbon';
 
-import Dashboard from '../timesheets/dashboard/Dashboard';
-
+import Dashboard from './dashboard/Dashboard';
 import Summary from './summary';
 import Details from './details';
 import Period from './period';
