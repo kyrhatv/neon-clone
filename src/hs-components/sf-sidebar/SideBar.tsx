@@ -14,6 +14,7 @@ export interface SidebarProps {
     type?: 'Over' | 'Push' | 'Slide' | 'Auto';
     position?: 'Left' | 'Right';
     width?: 'auto' | string;
+    styleVariant?: string;
     showBackdrop?: boolean;
     isPinned: boolean;
     closeOnDocumentClick?: boolean;
@@ -28,6 +29,7 @@ const defaultProps: SidebarProps = {
     type: 'Over',
     position: 'Left',
     width: '220px',
+    styleVariant: undefined,
     showBackdrop: false,
     isPinned: false,
     closeOnDocumentClick: true,
@@ -44,6 +46,7 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
     type,
     position,
     width,
+    styleVariant = undefined,
     showBackdrop,
     isPinned,
     closeOnDocumentClick,
@@ -82,7 +85,8 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
             id={id}
             created={onCreate}
             style={{ visibility: 'hidden' }}
-            className={'sidebar'}
+            className={styleVariant === undefined ? 'sidebar' : styleVariant}
+            // className={'sidebar'}
             type={type}
             position={position}
             enableGestures={false}
@@ -91,20 +95,22 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
             ref={sidebarRef}
             width={width}
             target={'.content'}>
-            {children}
+            <div className="noselect">
+                {children}
 
-            <Container fluid className="footer">
-                {footerContent}
-                <Row>
-                    <Col md={12}>
-                        <Button variant="primary" size="sm" onClick={onPinChanged} block>
-                            <Icon iconName="thumbtack" />
-                            <InlineSpace />
-                            {isPinned ? t('menus.unpin') : t('menus.pin')}
-                        </Button>
-                    </Col>
-                </Row>
-            </Container>
+                <Container fluid className="footer">
+                    {footerContent}
+                    <Row>
+                        <Col md={12}>
+                            <Button variant="primary" size="sm" onClick={onPinChanged} block>
+                                <Icon iconName="thumbtack" />
+                                <InlineSpace />
+                                {isPinned ? t('menus.unpin') : t('menus.pin')}
+                            </Button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </SidebarComponent>
     );
 };

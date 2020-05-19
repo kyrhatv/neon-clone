@@ -39,6 +39,10 @@
     margin: 3;
 }
 
+.sidebar-config {
+    background-color: #282c34;
+}
+
 .sidebar-push {
     margin-left: 70px;
     background-color: #33383e;
@@ -61,5 +65,4 @@
 .footer {
     bottom: 5px;
     position: absolute;
-    width: inherit;
 }

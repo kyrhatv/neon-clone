@@ -51,7 +51,11 @@ export const MenuContent: FunctionComponent<NavStruct> = ({ struct }) => {
             ) : (
                 <>
                     <div className="non-collapse-menu-header card-header">
-                        <h6>{t(menu.key)}</h6>
+                        <div className="d-flex align-items-center" style={{ height: '100%', paddingLeft: '7px' }}>
+                            <span style={{ fontSize: 'large', fontWeight: 'bolder', marginBottom: '0' }}>
+                                {t(menu.key)}
+                            </span>
+                        </div>
                     </div>
                     <Nav defaultActiveKey="/home" className="flex-column">
                         {menu.children.map((menuItem) => {

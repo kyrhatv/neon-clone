@@ -30,7 +30,8 @@ const ConfigSidebar: FunctionComponent<ConfigSidebarProps> = ({ children, footer
             onPinChanged={pinChangedHandler}
             closeOnDocumentClick={closeOnDocumentClick}
             width={'250px'}
-            footerContent={footerContent}>
+            footerContent={footerContent}
+            styleVariant="sidebar sidebar-config">
             <>{children}</>
         </SideBar>
     );

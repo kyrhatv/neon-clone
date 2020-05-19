@@ -13,7 +13,7 @@ import { ConfigsRouter, MainContentRouter } from 'app-main/app/router';
 import './style.css';
 
 const Root: FunctionComponent = () => {
-    const [t, i18n] = useTranslation();
+    const i18n = useTranslation()[1];
 
     i18n.language === 'en' ? moment.locale('en') : moment.locale('fr', FR);
     return (

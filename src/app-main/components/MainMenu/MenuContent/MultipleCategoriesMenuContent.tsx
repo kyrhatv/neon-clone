@@ -43,11 +43,13 @@ export const MultipleCategoriesMenuContent: FunctionComponent<MultipleCategories
                 className="collapsable-menu-header"
                 as={Card.Header}
                 eventKey={category.categoryId}>
-                <h6>
-                    {open ? <Icon iconName="chevron-down" /> : <Icon iconName="chevron-right" />}
-                    <InlineSpace />
-                    {t(category.categoryId)}
-                </h6>
+                <div className="d-flex align-items-center" style={{ height: '100%', paddingLeft: '7px' }}>
+                    <span style={{ fontSize: 'large', fontWeight: 'bolder', marginBottom: '0' }}>
+                        {open ? <Icon iconName="chevron-down" /> : <Icon iconName="chevron-right" />}
+                        <InlineSpace />
+                        {t(category.categoryId)}
+                    </span>
+                </div>
             </Accordion.Toggle>
             <>
                 {menu.children
