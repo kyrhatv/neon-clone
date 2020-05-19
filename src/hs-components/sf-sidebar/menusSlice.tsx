@@ -1,7 +1,7 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app-main/app/store';
+import { RootState } from 'app-main/app/store';
 
-import { MAIN_MENU_ID, OPTIONS_MENU_ID } from '../../hs-utils/constants/constants';
+import { MAIN_MENU_ID, OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
 export type Menu = {
     id: string;

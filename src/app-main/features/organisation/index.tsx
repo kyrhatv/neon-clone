@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Employees from './employees';
 import Hierarchy from './hierarchy';
-import { PageContent } from 'hs-components/Layout';
+import { PageContent } from 'app-main/components/Layout';
 
 const Organisation = (routerProps: { match: { path: any } }) => {
     return (

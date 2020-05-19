@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import ReportConfigs from './report-configuration';
 import Reports from './reports';
-import { PageContent } from 'hs-components/Layout';
+import { PageContent } from 'app-main/components/Layout';
 
 const Analyze = (routerProps: { match: { path: any } }) => {
     return (

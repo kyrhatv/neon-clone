@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react';
 
 import InlineSpace from 'hs-components/hs-component-space';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import './style.css';
 export type StepperProps = {};
 

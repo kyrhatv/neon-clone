@@ -4,7 +4,7 @@ import { FunctionComponent } from 'react';
 
 import { Button, Modal } from 'react-bootstrap';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import InlineSpace from 'hs-components/hs-component-space';
 
 type ConfirmModalTexts = {

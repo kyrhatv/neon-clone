@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import { useLocation } from 'react-router-dom';
 
 import { useCss } from 'react-use';

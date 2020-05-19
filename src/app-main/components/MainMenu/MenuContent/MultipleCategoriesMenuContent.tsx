@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { FunctionComponent } from 'react';
-import { NavOption, SubCategory } from '../../../app-main/utils/RootStructInterface';
+
+import { NavOption, SubCategory } from 'app-main/utils/RootStructInterface';
 import { useTranslation } from 'react-i18next';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Accordion, Card } from 'react-bootstrap';
-import InlineSpace from '../../hs-component-space';
+import InlineSpace from 'hs-components/hs-component-space';
 
 import { useCss } from 'react-use';
 import './style.css';
 
-import Icon from '../../Icon/Icon';
+import Icon from 'hs-components/Icon';
 
 interface MultipleCategoriesMenuContentProps {
     menu: NavOption;

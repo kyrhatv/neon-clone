@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import moment from 'moment';
 import FR from 'translations/momentLocal';
 
-import { PageHeader } from 'hs-components/Layout';
-import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
+import { PageHeader } from 'app-main/components/Layout';
+import { MainMenu } from 'app-main/components/MainMenu/MainMenu';
 
 import { ConfigsRouter, MainContentRouter } from 'app-main/app/router';
 import './style.css';

@@ -4,7 +4,7 @@ import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import moment from 'moment';
 import InlineSpace from 'hs-components/hs-component-space';
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import { DatePicker } from 'hs-components/sf-calendars';
 
 import PeriodDisplay from './PeriodDisplay';

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import { RootState } from 'app-main/app/store';
 import { useLocation } from 'react-router-dom';
 

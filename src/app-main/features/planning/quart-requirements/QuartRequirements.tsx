@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import Quart from 'hs-components/Quarts';
 import RequirementCell from './RequirementCell';
 import InlineSpace from 'hs-components/hs-component-space';
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 
 import { RootState } from 'app-main/app/store';
 import { useSelector } from 'react-redux';

@@ -9,8 +9,8 @@ import { NavStruct } from 'app-main/utils/RootStructInterface';
 import { useCss } from 'react-use';
 
 import './style.css';
-import IconBarItem from 'hs-components/MainMenuSidebar/IconBar/IconBarItem';
-import IconBarFooterItem from 'hs-components/MainMenuSidebar/IconBar/IconBarFooterItem';
+import IconBarItem from 'app-main/components/MainMenu/IconBar/IconBarItem';
+import IconBarFooterItem from 'app-main/components/MainMenu/IconBar/IconBarFooterItem';
 
 const IconBar: FunctionComponent<NavStruct> = ({ struct }) => {
     const [t, i18n] = useTranslation();

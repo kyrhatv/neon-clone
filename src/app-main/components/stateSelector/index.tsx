@@ -6,7 +6,7 @@ import Stepper from 'hs-components/Stepper';
 import { Alert } from 'react-bootstrap';
 
 import { ConfirmModal } from 'hs-components/modals';
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import InlineSpace from 'hs-components/hs-component-space';
 
 import { Step } from 'hs-components/Stepper/Stepper';

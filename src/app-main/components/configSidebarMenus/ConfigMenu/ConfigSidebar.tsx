@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import SideBar from 'hs-components/sf-sidebar';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
-import { RootState } from '../../../app/store';
+import { RootState } from 'app-main/app/store';
 
 import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 

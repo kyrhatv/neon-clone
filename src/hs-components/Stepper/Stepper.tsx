@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FunctionComponent } from 'react';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import './bs-stepper.min.css';
 import InlineSpace from 'hs-components/hs-component-space';
 

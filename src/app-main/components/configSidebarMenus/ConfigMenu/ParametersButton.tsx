@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import InlineSpace from 'hs-components/hs-component-space';
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import { Button, Row, Col } from 'react-bootstrap';
 
 type ParametersButtonProps = {

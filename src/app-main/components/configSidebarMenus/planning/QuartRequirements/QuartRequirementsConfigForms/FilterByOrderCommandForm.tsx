@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import { Form, InputGroup } from 'react-bootstrap';
 import { RootState } from 'app-main/app/store';
 import { useSelector, useDispatch } from 'react-redux';

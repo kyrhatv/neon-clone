@@ -1,4 +1,4 @@
-import { NavOption } from '../utils/RootStructInterface';
+import { NavOption } from 'app-main/utils/RootStructInterface';
 
 export const RootStruct: NavOption[] = [
     {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { PageContent } from 'hs-components/Layout';
+import { PageContent } from 'app-main/components/Layout';
 
-import Ribbon from '../../components/ribbon';
+import Ribbon from 'app-main/components/ribbon';
 
 import Dashboard from './dashboard/Dashboard';
 import Summary from './summary';

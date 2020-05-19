@@ -3,10 +3,10 @@ import counterReducer from 'app-main/features/planning/test/counterSlice';
 
 import menusReducer from 'hs-components/sf-sidebar/menusSlice';
 
-import ribbonsReducer from '../../app-main/components/ribbon/ribbonsSlice';
-import stateSelectorReducer from '../../app-main/components/stateSelector/stateSelectorSlice';
+import ribbonsReducer from 'app-main/components/ribbon/ribbonsSlice';
+import stateSelectorReducer from 'app-main/components/stateSelector/stateSelectorSlice';
 
-import quartRequirementsConfigsReducer from '../components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
+import quartRequirementsConfigsReducer from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
 
 export const store = configureStore({
     reducer: {

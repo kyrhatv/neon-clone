@@ -4,7 +4,7 @@ import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import { Button, Row, Col, Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import Icon from '../Icon/Icon';
+import Icon from 'hs-components/Icon';
 import InlineSpace from 'hs-components/hs-component-space';
 import './sidebar-menu.css';
 

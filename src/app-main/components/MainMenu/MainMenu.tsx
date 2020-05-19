@@ -1,13 +1,13 @@
 import React from 'react';
 import { FunctionComponent } from 'react';
-import SideBar from '../sf-sidebar';
-import IconBar from './IconBar';
+import SideBar from 'hs-components/sf-sidebar';
+import IconBar from 'app-main/components/MainMenu/IconBar';
 import { NavStruct } from 'app-main/utils/RootStructInterface';
 import { MenuContent } from './MenuContent/MenuContent';
 import { usePrevious } from 'hs-utils/hs-hooks';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'app-main/app/store';
-import { selectById, updateMenu } from '../sf-sidebar/menusSlice';
+import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
 import { MAIN_MENU_ID } from 'hs-utils/constants/constants';
 
 export const MainMenu: FunctionComponent<NavStruct> = ({ struct }) => {

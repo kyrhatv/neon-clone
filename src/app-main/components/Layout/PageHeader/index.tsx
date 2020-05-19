@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useLocation } from 'react-router-dom';
-import { DynamicBreadcrumbs } from '../../DynamicBreadcrumbs/DynamicBreadcrumbs';
+import DynamicBreadcrumbs from 'app-main/components/dynamic-breadcrumbs';
 import { Row, Col, Button } from 'react-bootstrap';
-import { RootStruct } from '../../../app-main/app/RootStruct';
+import { RootStruct } from 'app-main/app/RootStruct';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
-import { RootState } from '../../../app-main/app/store';
+import { RootState } from 'app-main/app/store';
 import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
 import './style.css';
-import Icon from '../../Icon/Icon';
+import Icon from 'hs-components/Icon';
 
 const PageHeader: FunctionComponent = () => {
     let location = useLocation();

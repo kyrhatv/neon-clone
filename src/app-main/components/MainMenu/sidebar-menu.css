@@ -1,5 +1,5 @@
-@import '../../../node_modules/@syncfusion/ej2-base/styles/bootstrap.css';
-@import '../../../node_modules/@syncfusion/ej2-react-navigations/styles/bootstrap.css';
+@import '@syncfusion/ej2-base/styles/bootstrap.css';
+@import '@syncfusion/ej2-react-navigations/styles/bootstrap.css';
 
 .center-align {
     text-align: center;

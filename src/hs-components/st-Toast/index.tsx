@@ -7,7 +7,7 @@ import '@syncfusion/ej2-react-buttons/styles/bootstrap4.css';
 import '@syncfusion/ej2-react-popups/styles/bootstrap4.css';
 import '@syncfusion/ej2-react-notifications/styles/bootstrap4.css';
 
-import Icon from 'hs-components/Icon/Icon';
+import Icon from 'hs-components/Icon';
 import InlineSpace from 'hs-components/hs-component-space';
 import { Col, Row } from 'react-bootstrap';
 import { IconName } from '@fortawesome/fontawesome-svg-core';

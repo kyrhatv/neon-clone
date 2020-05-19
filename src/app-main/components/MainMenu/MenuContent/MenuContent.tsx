@@ -1,17 +1,15 @@
 import React from 'react';
+import { RootState } from 'app-main/app/store';
 import { FunctionComponent } from 'react';
-import { NavStruct } from '../../../app-main/utils/RootStructInterface';
+import { NavStruct } from 'app-main/utils/RootStructInterface';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { MultipleCategoriesMenuContent } from './MultipleCategoriesMenuContent';
 
-import { RootState } from '../../../app-main/app/store';
-import { selectById, updateMenu } from '../../sf-sidebar/menusSlice';
-
-import { MAIN_MENU_ID } from '../../../hs-utils/constants/constants';
-
+import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
+import { MAIN_MENU_ID } from 'hs-utils/constants/constants';
 import './style.css';
 
 export const MenuContent: FunctionComponent<NavStruct> = ({ struct }) => {
