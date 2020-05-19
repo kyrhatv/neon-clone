@@ -1,18 +1,10 @@
 import { Action, configureStore, ThunkAction, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-import menusReducer from 'hs-components/sf-sidebar/menusSlice';
-
-import ribbonsReducer from 'app-main/components/ribbon/ribbonsSlice';
-import stateSelectorReducer from 'app-main/components/stateSelector/stateSelectorSlice';
-
-import quartRequirementsConfigsReducer from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
+import ui from 'app-main/app/state/ui';
 
 export const store = configureStore({
     reducer: {
-        menus: menusReducer,
-        ribbons: ribbonsReducer,
-        stateSelectors: stateSelectorReducer,
-        quartRequirementsConfigs: quartRequirementsConfigsReducer
+        ui: ui
     },
     middleware: getDefaultMiddleware({
         serializableCheck: false

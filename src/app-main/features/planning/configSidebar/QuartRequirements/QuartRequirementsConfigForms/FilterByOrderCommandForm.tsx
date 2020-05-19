@@ -5,10 +5,7 @@ import { Form, InputGroup } from 'react-bootstrap';
 import { RootState } from 'app-main/app/store';
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-    selectById,
-    updateQuartRequirementsConfigs
-} from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
+import { selectById, updateQuartRequirementsConfigs } from '../QuartRequirementsConfigsSlice';
 
 type FilterByOrderCommandFormProps = {};
 

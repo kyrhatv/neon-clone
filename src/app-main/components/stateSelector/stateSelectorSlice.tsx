@@ -29,7 +29,7 @@ const stateSelectorSlice = createSlice({
 
 export const { updateSelectorSlice } = stateSelectorSlice.actions;
 
-const stateSelectorSelectors = stateSelectorsAdapter.getSelectors<RootState>((state) => state.ribbons);
+const stateSelectorSelectors = stateSelectorsAdapter.getSelectors<RootState>((state) => state.ui.ribbons);
 
 export const { selectById } = stateSelectorSelectors;
 export default stateSelectorSlice.reducer;

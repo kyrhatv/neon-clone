@@ -41,7 +41,7 @@ const quartRequirementsConfigsSlice = createSlice({
 export const { updateQuartRequirementsConfigs } = quartRequirementsConfigsSlice.actions;
 
 const quartRequirementsConfigsSelectors = quartRequirementsConfigsAdapter.getSelectors<RootState>(
-    (state) => state.quartRequirementsConfigs
+    (state) => state.ui.configSidebar.planning.quartRequirements
 );
 
 export const { selectById } = quartRequirementsConfigsSelectors;

@@ -11,7 +11,7 @@ import {
     selectById
     // ,
     // updateQuartRequirementsConfigs
-} from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
+} from '../QuartRequirementsConfigsSlice';
 
 type SortCriteriaFormProps = {};
 

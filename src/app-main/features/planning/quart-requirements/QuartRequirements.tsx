@@ -14,7 +14,7 @@ import Icon from 'hs-components/Icon';
 import { RootState } from 'app-main/app/store';
 import { useSelector } from 'react-redux';
 
-import { selectById } from 'app-main/components/configSidebarMenus/planning/QuartRequirements/QuartRequirementsConfigsSlice';
+import { selectById } from '../configSidebar/QuartRequirements/QuartRequirementsConfigsSlice';
 
 type QuartRequirementProps = {};
 

@@ -32,7 +32,7 @@ const ribbonsSlice = createSlice({
 
 export const { updateRibbon } = ribbonsSlice.actions;
 
-const ribbonsSelectors = ribbonsAdapter.getSelectors<RootState>((state) => state.ribbons);
+const ribbonsSelectors = ribbonsAdapter.getSelectors<RootState>((state) => state.ui.ribbons);
 
 export const { selectById } = ribbonsSelectors;
 export default ribbonsSlice.reducer;

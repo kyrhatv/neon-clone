@@ -37,7 +37,7 @@ const menusSlice = createSlice({
 
 export const { updateMenu } = menusSlice.actions;
 
-const menusSelectors = menusAdapter.getSelectors<RootState>((state) => state.menus);
+const menusSelectors = menusAdapter.getSelectors<RootState>((state) => state.ui.menus);
 
 export const { selectById } = menusSelectors;
 export default menusSlice.reducer;
