@@ -8,7 +8,6 @@ import FR from 'translations/momentLocal';
 
 import { PageHeader } from 'hs-components/Layout';
 import { MainMenu } from 'hs-components/MainMenuSidebar/MainMenu';
-// import i18n from 'translations/i18n';
 
 import { ConfigsRouter, MainContentRouter } from 'app-main/app/router';
 import './style.css';
