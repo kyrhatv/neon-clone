@@ -18,6 +18,7 @@ export interface SidebarProps {
     isPinned: boolean;
     closeOnDocumentClick?: boolean;
     children: JSX.Element;
+    footerContent?: undefined | JSX.Element;
     onPinChanged: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -31,6 +32,7 @@ const defaultProps: SidebarProps = {
     isPinned: false,
     closeOnDocumentClick: true,
     children: <h1>hello</h1>,
+    footerContent: undefined,
     onPinChanged: () => {
         console.log('hello');
     }
@@ -46,7 +48,8 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
     isPinned,
     closeOnDocumentClick,
     onPinChanged,
-    children
+    children,
+    footerContent = undefined
 }) => {
     const sidebarRef = useRef(null);
     const [t] = useTranslation();
@@ -89,7 +92,9 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
             width={width}
             target={'.content'}>
             {children}
-            <Container fluid>
+
+            <Container fluid className="footer">
+                {footerContent}
                 <Row>
                     <Col md={12}>
                         <Button variant="primary" size="sm" onClick={onPinChanged} block>

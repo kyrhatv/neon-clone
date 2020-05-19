@@ -19,7 +19,7 @@ const DivisionAffectationSelector: FunctionComponent<DivisionAffectationSelector
         { displayText: 'Implantation', division: 'Chicoutimi', id: 'item8' },
         { displayText: 'Support', division: 'Chicoutimi', id: 'item9' }
     ];
-
+ 
     const onSelectionChange = (values) => {
         setselectedValues(values);
     };

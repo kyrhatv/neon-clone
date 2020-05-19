@@ -1,10 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Icon from 'hs-components/Icon/Icon';
-import { Button, Form, Container } from 'react-bootstrap';
-import InlineSpace from 'hs-components/hs-component-space';
+import { Form, Container } from 'react-bootstrap';
 
-import ConfigSearchbar from '../../ConfigSearchbar';
+import ConfigSearchbar from 'app-main/components/configSidebarMenus/ConfigMenu/ConfigSearchbar';
 
 import {
     FilterByOrderCommandForm,
@@ -77,14 +75,6 @@ const QuartRequirementConfigFormContainer: FunctionComponent<QuartRequirementCon
                     ? config.component
                     : null;
             })}
-
-            <div style={{ paddingBottom: '5px' }}>
-                <Button variant="primary" size="sm" block>
-                    <Icon iconName="cogs" />
-                    <InlineSpace />
-                    {t('ShiftRequirements.configs.PlanningParameters')}
-                </Button>
-            </div>
         </Container>
     );
 };

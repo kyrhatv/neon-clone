@@ -2,13 +2,13 @@ import React, { FunctionComponent } from 'react';
 import SideBar from 'hs-components/sf-sidebar';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectById, updateMenu } from 'hs-components/sf-sidebar/menusSlice';
-import { RootState } from '../../app-main/app/store';
+import { RootState } from '../../../app/store';
 
 import { OPTIONS_MENU_ID } from 'hs-utils/constants/constants';
 
-type ConfigSidebarProps = { children: JSX.Element };
+type ConfigSidebarProps = { children: JSX.Element; footerContent: JSX.Element };
 
-const ConfigSidebar: FunctionComponent<ConfigSidebarProps> = ({ children }) => {
+const ConfigSidebar: FunctionComponent<ConfigSidebarProps> = ({ children, footerContent }) => {
     const menuState = useSelector((state: RootState) => selectById(state, OPTIONS_MENU_ID));
     const dispatch = useDispatch();
 
@@ -29,7 +29,8 @@ const ConfigSidebar: FunctionComponent<ConfigSidebarProps> = ({ children }) => {
             isPinned={menuState.isPinned}
             onPinChanged={pinChangedHandler}
             closeOnDocumentClick={closeOnDocumentClick}
-            width={'250px'}>
+            width={'250px'}
+            footerContent={footerContent}>
             <>{children}</>
         </SideBar>
     );
