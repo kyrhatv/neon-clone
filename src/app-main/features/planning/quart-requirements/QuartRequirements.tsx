@@ -23,18 +23,7 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = () => {
 
     const QuartRequirementsConfigs = useSelector((state: RootState) => selectById(state, 'requirementsConfigs'));
 
-    const {
-        // id,
-        // filterByOrderSearch,
-        // filterCriteria,
-        // SortCriteria,
-        // showSubDivs,
-        // showUnderAndOver,
-        // showNonWork,
-        // countOnlyEmployees,
-        // filterByAffDivSelection,
-        showDetailledRequirementCell
-    } = QuartRequirementsConfigs;
+    const { showDetailledRequirementCell } = QuartRequirementsConfigs;
 
     const addShiftClickHandler = () => {
         console.log('add clicked ');
@@ -147,35 +136,27 @@ const QuartRequirements: FunctionComponent<QuartRequirementProps> = () => {
         }
     ];
 
-    // const getfilteredData = () => {
-    //     if (showUnderAndOver) {
-    //         return data.filter((data) => data.iscovered === true);
-    //     }
-    //     return data;
-    // };
-
     return (
         <>
-            {JSON.stringify(QuartRequirementsConfigs)}
             <ReactTable
                 data={data}
                 columns={columns}
                 defaultPageSize={5}
                 className="-striped -highlight"
-                // SubComponent={(row) => {
-                //     return (
-                //         <div style={{ backgroundColor: '#f7f7f7' }}>
-                //             <div style={{ padding: '15px' }}>
-                //                 <ReactTable
-                //                     data={data}
-                //                     columns={columns}
-                //                     defaultPageSize={10}
-                //                     className="-striped -highlight"
-                //                 />
-                //             </div>
-                //         </div>
-                //     );
-                // }}
+                SubComponent={(row) => {
+                    return (
+                        <div style={{ backgroundColor: '#f7f7f7' }}>
+                            <div style={{ padding: '15px' }}>
+                                <ReactTable
+                                    data={data}
+                                    columns={columns}
+                                    defaultPageSize={10}
+                                    className="-striped -highlight"
+                                />
+                            </div>
+                        </div>
+                    );
+                }}
             />
         </>
     );

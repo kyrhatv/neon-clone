@@ -7,9 +7,9 @@ import InlineSpace from 'hs-components/hs-component-space';
 
 import Icon from 'hs-components/Icon';
 import './style.css';
-export type StepperProps = {};
+export type QuartProps = {};
 
-const Quart: FunctionComponent<StepperProps> = () => {
+const Quart: FunctionComponent<QuartProps> = () => {
     return (
         <div className="Quart">
             <Col md={12} style={{ paddingLeft: '0px' }}>

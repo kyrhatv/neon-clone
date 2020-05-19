@@ -45,17 +45,13 @@ const FR = {
     isPM: function (input) {
         return input.charAt(0) === 'M';
     },
-    // In case the meridiem units are not separated around 12, then implement
-    // this function (look at locale/id.js for an example).
-    // meridiemHour : function (hour, meridiem) {
-    //     return /* 0-23 hour, given meridiem token and hour 1-12 */ ;
-    // },
+
     meridiem: function (hours, minutes, isLower) {
         return hours < 12 ? 'PD' : 'MD';
     },
     week: {
-        dow: 1, // Monday is the first day of the week.
-        doy: 4 // Used to determine first week of the year.
+        dow: 1,
+        doy: 4
     }
 };
 

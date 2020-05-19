@@ -86,7 +86,6 @@ export const SideBar: FunctionComponent<SidebarProps> = ({
             created={onCreate}
             style={{ visibility: 'hidden' }}
             className={styleVariant === undefined ? 'sidebar' : styleVariant}
-            // className={'sidebar'}
             type={type}
             position={position}
             enableGestures={false}

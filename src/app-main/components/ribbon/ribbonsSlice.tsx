@@ -7,7 +7,6 @@ export type Ribbon = {
     id: string;
     companyCode: string;
     selectedDate: Date;
-    // planificationPeriodDTO: boolean;
 };
 
 const ribbonsAdapter = createEntityAdapter<Ribbon>({});
@@ -15,9 +14,7 @@ const emptyInitialState = ribbonsAdapter.getInitialState();
 
 const ENTITIES: Ribbon[] = [
     { id: PLANNING_RIBBON_ID, companyCode: 'hora', selectedDate: new Date() },
-    // start: new Date(), end: new Date(),
     { id: TIMESHEETS_RIBBON_ID, companyCode: 'hora', selectedDate: new Date() }
-    // start: new Date(), end: new Date(),
 ];
 
 const INITIAL_STATE = ribbonsAdapter.upsertMany(emptyInitialState, ENTITIES);

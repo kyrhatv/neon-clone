@@ -11,8 +11,8 @@ import PeriodDisplay from './PeriodDisplay';
 
 import './style.css';
 
-import { selectById } from './ribbonsSlice'; //, updateRibbon
-import { useSelector } from 'react-redux'; //, useDispatch
+import { selectById } from './ribbonsSlice';
+import { useSelector } from 'react-redux';
 import { RootState } from 'app-main/app/store';
 
 type RibbonProps = {
@@ -21,7 +21,6 @@ type RibbonProps = {
 
 const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
     const [t] = useTranslation();
-    // const dispatch = useDispatch();
 
     const ribbonState = useSelector((state: RootState) => selectById(state, id));
 
@@ -30,14 +29,6 @@ const Ribbon: FunctionComponent<RibbonProps> = ({ id }) => {
     const [currentDay, setCurrentDay] = useState(ribbonState.selectedDate);
 
     const prevClickedHandler = () => {
-        // const selectedDate = moment(currentDay).subtract(nbOfWeeks, 'week').toDate();
-        // dispatch(
-        //     updateRibbon({
-        //         id: id,
-        //         changes: { selectedDate: selectedDate }
-        //     })
-        // );
-
         setCurrentDay(moment(currentDay).subtract(nbOfWeeks, 'week').toDate());
     };
     const nextClickedHandler = () => {

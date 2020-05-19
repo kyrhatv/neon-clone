@@ -2,15 +2,9 @@ import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'react-bootstrap';
 import { RootState } from 'app-main/app/store';
-import {
-    useSelector
-    // , useDispatch
-} from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import {
-    selectById
-    // ,updateQuartRequirementsConfigs
-} from '../QuartRequirementsConfigsSlice';
+import { selectById } from '../QuartRequirementsConfigsSlice';
 
 type FilterByAffDivFormProps = {};
 

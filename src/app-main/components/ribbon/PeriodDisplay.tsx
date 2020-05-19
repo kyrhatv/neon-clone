@@ -10,13 +10,7 @@ type PeriodDisplayProps = {
 const PeriodDisplay: FunctionComponent<PeriodDisplayProps> = ({ date }) => {
     return (
         <Badge variant="secondary">
-            {
-                // moment(date).subtract(nbOfWeeks, 'week').startOf('week').format('LL') +
-                moment(date).startOf('week').format('LL') +
-                    ' - ' +
-                    // moment(date).add(nbOfWeeks, 'week').endOf('week').format('LL')
-                    moment(date).endOf('week').format('LL')
-            }
+            {moment(date).startOf('week').format('LL') + ' - ' + moment(date).endOf('week').format('LL')}
         </Badge>
     );
 };

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { FunctionComponent } from 'react';
 import { DatePickerComponent, ChangedEventArgs } from '@syncfusion/ej2-react-calendars';
 
-import '../style.css'; //pour fix le bug de syncfusion pour Bootstrp4
+import '../style.css';
 
 import { CalendarView, DayHeaderFormats } from '@syncfusion/ej2-calendars/src/calendar/calendar';
 
